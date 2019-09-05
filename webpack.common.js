@@ -8,7 +8,7 @@ module.exports = {
     common: "./src/vendor/jquery.js"
   },
   output: {
-    filename: "[name].[hash].js",
+    filename: "[name].[hash:5].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "/"
   },
