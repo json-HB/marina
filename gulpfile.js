@@ -3,20 +3,18 @@ const gulp = require("gulp");
 const cssnano = require("gulp-cssnano");
 const imagemin = require("gulp-imagemin");
 
+const PNG = imagemin.optipng({ optimizationLevel: 5 });
+const JPEG = imagemin.jpegtran({ progressive: true });
+const GIF = imagemin.gifsicle({ interlaced: true, optimizationLevel: 4 });
+const SVG = imagemin.svgo({
+  plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
+});
+
 gulp.task("imagemin", function(done) {
   gulp
     .src("src/image/*.png")
 
-    .pipe(
-      imagemin([
-        // imagemin.gifsicle({ interlaced: true, optimizationLevel: 4 }),
-        // imagemin.jpegtran({ progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 })
-        // imagemin.svgo({
-        //   plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
-        // })
-      ])
-    )
+    .pipe(imagemin([PNG]))
     .pipe(gulp.dest("src/image"))
     .on("finish", function() {
       done();
