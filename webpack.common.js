@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     app: "./src/index.js",
-    common: "./src/vendor/jquery.js"
+    jquery: "./src/vendor/jquery.js"
   },
   output: {
     filename: "[name].[hash:5].js",
@@ -27,7 +27,7 @@ module.exports = {
           priority: 20
         },
         commons: {
-          name: "common",
+          name: "jquery",
           chunks: "all",
           minChunks: 1
         },
@@ -39,11 +39,14 @@ module.exports = {
       }
     }
   },
-  resolve: {},
+  target: "web",
+  resolve: {
+    extensions: [".js", ".json", ".jsx", ".css"]
+  },
   module: {
     rules: [
       {
-        test: /\.less$/,
+        test: /\.[c|le]ss$/,
         use: [
           {
             loader: "style-loader" // creates style nodes from JS strings
@@ -54,11 +57,29 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: [require("autoprefixer")]
+              plugins: [
+                require("postcss-plugin-px2rem")({
+                  rootValue: 120,
+                  unitPrecision: 5,
+                  propWhiteList: [],
+                  propBlackList: [],
+                  exclude: false,
+                  selectorBlackList: [],
+                  ignoreIdentifier: false,
+                  replace: true,
+                  mediaQuery: false,
+                  minPixelValue: 0
+                }),
+                require("autoprefixer")(),
+                require("cssnano")()
+              ]
             }
           },
           {
-            loader: "less-loader" // compiles Less to CSS
+            loader: "less-loader", // compiles Less to CSS
+            options: {
+              sourceMap: true
+            }
           }
         ]
       },
