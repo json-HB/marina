@@ -8,7 +8,7 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin({}),
     new webpack.BannerPlugin({
-      banner: `Author jihaibo; Time: ${new Date().toUTCString()}`
+      banner: `Author jihaibo; BuildTime: ${new Date().toUTCString()}`
     })
   ]
 });
