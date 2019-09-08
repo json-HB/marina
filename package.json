@@ -50,7 +50,8 @@
   "scripts": {
     "build": "webpack --config webpack.pro.js --progress --colors",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "postbuild": "gulp htmlMini"
+    "postbuild": "gulp htmlMini",
+    "tar": "./bin/deploy.sh"
   },
   "author": "jason",
   "license": "ISC",
