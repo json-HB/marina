@@ -11,5 +11,7 @@
     "G": true
   },
   "plugins": ["prettier"],
-  "rules": {}
+  "rules": {
+    "no-console": 0
+  }
 }

@@ -20,10 +20,7 @@
     <link rel="stylesheet" href="/bootstrap.css" />
   </head>
   <body>
-    <script>
-      <%= require('html-loader!./src/html/rem.js')%>
-    </script>
-    <%= require('html-loader!./src/html/index.html') %>
-    <style></style>
+    <%= require('html-loader!./src/html/include/rem.html') %> <%=
+    require('html-loader!./src/html/section/index.html') %>
   </body>
 </html>

@@ -46,32 +46,6 @@ gulp.task("default", function(cb) {
     });
 });
 
-// html minify
-gulp.task("htmlMini", function(done) {
-  gulp
-    .src("dist/*.html")
-    .pipe(
-      through.obj(function(file, enc, next) {
-        let res = String(file.contents);
-        res = res.replace(/[\n|\t|\s]*/g, "");
-        file.contents = Buffer.from(res);
-        this.push(file);
-        next();
-      })
-    )
-    .pipe(gulp.dest("dist"))
-    .on("finish", () => {
-      done();
-      util.log(util.colors.bold.green("optimize html successful!"));
-      if (CONFIG.test == "1") {
-        const serverout = require("child_process").spawn("gulp", ["server"]);
-        serverout.stdout.on("data", d => {
-          util.log(util.colors.green(String(d)));
-        });
-      }
-    });
-});
-
 // start local server
 gulp.task("server", function() {
   bs.init(

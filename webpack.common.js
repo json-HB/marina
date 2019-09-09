@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     app: "./src/index.js",
-    jquery: "./src/vendor/jquery.js"
+    jquery: ["./src/vendor/jquery.js"]
   },
   output: {
     filename: "[name].[hash:5].js",
@@ -28,8 +28,7 @@ module.exports = {
         },
         commons: {
           name: "jquery",
-          chunks: "all",
-          minChunks: 1
+          chunks: "all"
         },
         default: {
           minChunks: 2,
@@ -108,6 +107,13 @@ module.exports = {
           }
         ],
         include: path.resolve(__dirname, "src")
+      },
+      {
+        test: /\.ejs$/,
+        loader: "ejs-loader",
+        query: {
+          variable: "data"
+        }
       }
     ]
   },
@@ -115,16 +121,26 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: "src/css/main/bootstrap.css"
+      },
+      {
+        from: "src/image",
+        to: "images"
       }
     ]),
     new HtmlWebpackPlugin({
       title: "document",
+      favicon: path.resolve(__dirname, "favicon.ico"),
       filename: "index.html",
       template: path.resolve(__dirname, "index.html"),
       minify: {
-        collapseInlineTagWhitespace: true,
+        collapseWhitespace: true,
         removeComments: true,
-        minifyCSS: true
+        collapseBooleanAttributes: true,
+        collapseInlineTagWhitespace: true,
+        conservativeCollapse: true,
+        minifyJS: {
+          compress: true
+        }
       }
     })
   ]
