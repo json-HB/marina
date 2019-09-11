@@ -6,6 +6,7 @@ const through = require("through2");
 const fs = require("fs");
 const util = require("gulp-util");
 const bs = require("browser-sync").create();
+const runSequence = require("run-sequence");
 let CONFIG = require("yargs").argv;
 
 CONFIG = Object.assign(CONFIG, process.env);
@@ -30,9 +31,9 @@ gulp.task("imagemin", function(done) {
     });
 });
 
-gulp.task("default", function(cb) {
+gulp.task("bootstrap", function(cb) {
   gulp
-    .src("./src/css/bootstrap.less", { base: "src/css" })
+    .src("./src/vendor/bootstrap.less", { base: "src/vendor" })
     .pipe(less())
     .pipe(cssnano())
     .pipe(gulp.dest("src/css/main"))
@@ -44,6 +45,48 @@ gulp.task("default", function(cb) {
         util.log(util.colors.bold.green(`file size is ${Size.toFixed(2)} Kb`));
       });
     });
+});
+
+// start project
+gulp.task("build", function() {
+  runSequence("g:webpack:build");
+});
+
+// start project
+gulp.task("dev", function() {
+  runSequence("bootstrap", "g:webpack:dev");
+});
+
+// webpack build
+gulp.task("g:webpack:build", function() {
+  const webpack = require("child_process").exec("npm run  webpack:build", {
+    encoding: "utf8",
+    cwd: process.cwd()
+  });
+  webpack.stdout.on("data", d => {
+    util.log(String(d));
+  });
+  webpack.on("close", code => {
+    if (code != 0) {
+      util.log(util.colors.red(`webpack process exit, code is ${code}`));
+    }
+  });
+});
+
+// webpack dev server
+gulp.task("g:webpack:dev", function() {
+  const webpack = require("child_process").exec("npm run webpack:dev", {
+    encoding: "utf8",
+    cwd: process.cwd()
+  });
+  webpack.stdout.on("data", d => {
+    util.log(util.colors.green(String(d)));
+  });
+  webpack.on("close", code => {
+    if (code != 0) {
+      util.log(util.colors.red(`webpack process exit, code is ${code}`));
+    }
+  });
 });
 
 // start local server

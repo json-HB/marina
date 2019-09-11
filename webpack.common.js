@@ -45,7 +45,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.[c|le]ss$/,
+        test: /\.(c|le)ss$/,
         use: [
           {
             loader: "style-loader" // creates style nodes from JS strings
@@ -58,7 +58,7 @@ module.exports = {
             options: {
               plugins: [
                 require("postcss-plugin-px2rem")({
-                  rootValue: 120,
+                  rootValue: 100,
                   unitPrecision: 5,
                   propWhiteList: [],
                   propBlackList: [],

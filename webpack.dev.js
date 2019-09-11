@@ -5,8 +5,10 @@ const common = require("./webpack.common.js");
 module.exports = merge(common, {
   devServer: {
     contentBase: "dist",
-    hot: true
+    hot: true,
+    open: true
   },
+  devtool: "inline-source-map",
   mode: "development",
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
