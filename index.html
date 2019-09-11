@@ -19,8 +19,9 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="stylesheet" href="/bootstrap.css" />
   </head>
-  <body class="hidden">
-    <%= require('html-loader!./src/html/include/rem.html') %> <%=
+  <body>
+    <%= require('html-loader!./src/html/loading/loading.html') %> <%=
+    require('html-loader!./src/html/include/rem.html') %> <%=
     require('html-loader!./src/html/section/index.html') %>
   </body>
 </html>

@@ -30,3 +30,8 @@ export function isMobile() {
 
   return mobile_flag;
 }
+
+export function RegNum(str) {
+  str = String(str);
+  return str.replace(/(\d)(?=(?:\d{3})+$)/g, "$1,");
+}

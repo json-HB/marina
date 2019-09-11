@@ -33,7 +33,7 @@ gulp.task("imagemin", function(done) {
 
 gulp.task("bootstrap", function(cb) {
   gulp
-    .src("./src/vendor/bootstrap.less", { base: "src/vendor" })
+    .src("./src/css/vendor/bootstrap.less", { base: "src/css/vendor" })
     .pipe(less())
     .pipe(cssnano())
     .pipe(gulp.dest("src/css/main"))
