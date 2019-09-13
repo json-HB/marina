@@ -2,7 +2,6 @@
 <ol class="carousel-indicators">
   <% if (data.data.length) {
     let length = Math.ceil(data.data.length / (data.isMobile ? 1 : 2));
-    console.log(length, data.isMobile);
     let indictorArr = new Array(length).fill(1);
     indictorArr.forEach((item, index) => {
     %>

@@ -39,7 +39,6 @@ $(function() {
   // form submit
   $("form").submit(ev => {
     ev.preventDefault();
-    console.log("submit");
     const res = $("form").serialize();
     let resDel = "";
     res.split("&").forEach(item => {
@@ -98,7 +97,6 @@ $(function() {
   // select city
   $("#selectCity").on("change", function() {
     let val = $(this).val();
-    console.log(val);
     $(this).css("color", val ? "black" : "#999");
   });
 

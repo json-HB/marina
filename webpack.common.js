@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: "[name].[hash:5].js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/"
+    publicPath: process.env.publicPath || "/"
   },
   optimization: {
     splitChunks: {

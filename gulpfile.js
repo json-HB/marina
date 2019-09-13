@@ -8,6 +8,15 @@ const util = require("gulp-util");
 const bs = require("browser-sync").create();
 const runSequence = require("run-sequence");
 let CONFIG = require("yargs").argv;
+const requireAll = require("require-all");
+const conf = JSON.parse(fs.readFileSync(__dirname + "/config.json"));
+const publicPath = conf[process.env.NODE_ENV || "master"]["publicPath"];
+
+requireAll({
+  dirname: __dirname + "/gulp",
+  filter: /(.*)\.js$/,
+  recursive: true
+});
 
 CONFIG = Object.assign(CONFIG, process.env);
 
@@ -63,7 +72,7 @@ gulp.task("bootstrap", function(cb) {
 
 // start project
 gulp.task("build", function() {
-  runSequence("g:webpack:build");
+  runSequence("g:webpack:build", "srcCDN");
 });
 
 // start project
@@ -71,13 +80,41 @@ gulp.task("dev", function() {
   runSequence("bootstrap", "g:webpack:dev");
 });
 
+// replace src
+gulp.task("srcCDN", function() {
+  gulp
+    .src("dist/*.html")
+    .pipe(
+      through.obj(function(file, obj, done) {
+        let content = String(file.contents);
+        content = content.replace(/([src|href]=")([^"]*)"/g, function(
+          full,
+          $1,
+          $2
+        ) {
+          if (/https?|\/\//.test($2) || !$2.startsWith("/")) {
+            return full;
+          } else {
+            return $1 + publicPath + $2 + '"';
+          }
+        });
+        file.contents = Buffer.from(content);
+        this.push(file);
+        done();
+      })
+    )
+    .pipe(gulp.dest("dist"));
+});
+
 // webpack build
-gulp.task("g:webpack:build", function() {
-  const webpack = require("child_process").exec("npm run  webpack:build", {
+gulp.task("g:webpack:build", function(cb) {
+  const webpack = require("child_process").execSync("npm run  webpack:build", {
     encoding: "utf8",
-    cwd: process.cwd()
+    cwd: process.cwd(),
+    env: Object.assign(process.env, { publicPath })
   });
-  outputLog(webpack);
+  // outputLog(webpack);
+  cb();
 });
 
 // webpack dev server

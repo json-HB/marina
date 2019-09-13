@@ -17,8 +17,11 @@
     <meta name="description" content="marina web" />
     <meta name="keywords" content="" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <link rel="stylesheet" href="/bootstrap.css" />
-    <script src="/jquery.js"></script>
+    <link
+      rel="stylesheet"
+      href="<%= webpackConfig.output.publicPath %>/bootstrap.css"
+    />
+    <script src="<%= webpackConfig.output.publicPath %>/jquery.js"></script>
   </head>
   <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
     <%= require('html-loader!./src/html/loading/loading.html') %> <%=
