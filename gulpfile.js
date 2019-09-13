@@ -20,7 +20,13 @@ requireAll({
   recursive: true
 });
 
-CONFIG = Object.assign(conf, process.env);
+CONFIG = Object.assign(conf, process.env, {
+  BUILD_TIME: new Date().toISOString()
+});
+
+Object.keys(CONFIG).forEach(key => {
+  key.startsWith("npm_") && Reflect.deleteProperty(CONFIG, key);
+});
 
 console.log(CONFIG);
 
