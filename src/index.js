@@ -5,8 +5,6 @@ import carouseTpl from "ejs/carouse.ejs";
 import carouseData from "static/carouse.json";
 import { isMobile } from "./util/main";
 
-const { log } = console;
-
 $(function() {
   $(".bouncing-loader").addClass("hidden");
 
@@ -27,10 +25,8 @@ $(function() {
   // nav collapse
 
   $(document).on("click", function(ev) {
-    log("click", ev.target);
     if (isMobile()) {
       if (!$.contains($(".navbar-nav").get(0), ev.target)) {
-        log("inner");
         $(".navbar-collapse").collapse("hide");
       }
     }
@@ -164,7 +160,6 @@ $(function() {
       const totalHeight = 144;
       const clinetHeight = $(window).height();
       const restHeight = clinetHeight - totalHeight;
-      log(restHeight);
       if (restHeight > 638 || restHeight < 900) {
         $("#home").height(restHeight);
       }
