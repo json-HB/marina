@@ -134,4 +134,18 @@ $(function() {
   $("#back-to-top").click(function() {
     $("html, body").animate({ scrollTop: 0 }, 300, "linear");
   });
+
+  // home fitst screen
+  function homeFullScreen() {
+    if (!isMobile()) {
+      const totalHeight = 144;
+      const clinetHeight = $(window).height();
+      const restHeight = clinetHeight - totalHeight;
+      log(restHeight);
+      if (restHeight > 638 || restHeight < 900) {
+        $("#home").height(restHeight);
+      }
+    }
+  }
+  homeFullScreen();
 });

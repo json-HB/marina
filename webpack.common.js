@@ -115,7 +115,7 @@ module.exports = {
       {
         test: /\.ejs$/,
         loader: "ejs-loader",
-        query: {
+        options: {
           variable: "data"
         }
       }
