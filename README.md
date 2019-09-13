@@ -18,12 +18,12 @@
 - `-- src/css - css文件`
 - `---- src/css/main - css主文件`
 - `---- src/css/vendor - less预编译文件`
-- `-- src/html - html静态文件`
 - `---- src/html/ejs - ejs模板文件`
 - `---- src/html/include - layout文件`
 - `---- src/html/loading - loading文件`
 - `---- src/html/section - module文件`
 - `-- src/image - 图片`
+- `-- src/html - html静态文件`
 - `-- src/static - 静态数据文件`
 - `-- src/util - 工具库文件`
 - `-- src/vendor - 自定义的库文件`
@@ -40,3 +40,28 @@
 ### 优化图片
 
 - 进行图片优化执行`gulp imagemin`
+
+### github hook
+![github hook](https://github.com/json-HB/marina/blob/master/assert/githubHook.png)
+![hook result](https://github.com/json-HB/marina/blob/master/assert/result.png)
+
+### 部署服务器
+> nodeApi 文件
+
+![nodeApi](https://github.com/json-HB/marina/blob/master/assert/nodeApi.jpg)
+
+> shell 脚本执行构建
+
+![shell](https://github.com/json-HB/marina/blob/master/assert/shellDeploy.jpg)
+
+> 服务端项目目录
+
+![serverWeb](https://github.com/json-HB/marina/blob/master/assert/serverWeb.jpg)
+
+> nginx 文件
+
+![serverWeb](https://github.com/json-HB/marina/blob/master/assert/nginx.jpg)
+
+------
+
+`有不懂得可以讨论，或者提优化，一起经部`
