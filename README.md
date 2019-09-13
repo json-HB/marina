@@ -14,6 +14,7 @@
 - `dist - 构建目标`
 - `gulp - gulp task文件`
 - `src - 源文件`
+- `webpack.* webpack配置文件`
 - `-- src/css - css文件`
 - `---- src/css/main - css主文件`
 - `---- src/css/vendor - less预编译文件`
