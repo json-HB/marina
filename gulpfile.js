@@ -9,8 +9,10 @@ const bs = require("browser-sync").create();
 const runSequence = require("run-sequence");
 let CONFIG = require("yargs").argv;
 const requireAll = require("require-all");
-const conf = JSON.parse(fs.readFileSync(__dirname + "/config.json"));
-const publicPath = conf[process.env.NODE_ENV || "master"]["publicPath"];
+const conf = JSON.parse(fs.readFileSync(__dirname + "/config.json"))[
+  process.env.NODE_ENV || "master"
+];
+const publicPath = conf["publicPath"];
 
 requireAll({
   dirname: __dirname + "/gulp",
@@ -18,7 +20,9 @@ requireAll({
   recursive: true
 });
 
-CONFIG = Object.assign(CONFIG, process.env);
+CONFIG = Object.assign(conf, process.env);
+
+console.log(CONFIG);
 
 // image type
 const PNG = imagemin.optipng({ optimizationLevel: 5 });
@@ -72,12 +76,30 @@ gulp.task("bootstrap", function(cb) {
 
 // start project
 gulp.task("build", function() {
-  runSequence("g:webpack:build", "srcCDN");
+  runSequence("g:webpack:build", "srcCDN", "propoMerge");
 });
 
 // start project
 gulp.task("dev", function() {
   runSequence("bootstrap", "g:webpack:dev");
+});
+
+// propertyMerge
+gulp.task("propoMerge", function() {
+  gulp
+    .src("dist/*.html")
+    .pipe(
+      through.obj(function(file, obj, done) {
+        let content = String(file.contents);
+        content = content.replace(/{{([^}]*)}}/g, function(full, $1) {
+          return CONFIG[$1] || "failed";
+        });
+        file.contents = Buffer.from(content);
+        this.push(file);
+        done();
+      })
+    )
+    .pipe(gulp.dest("dist"));
 });
 
 // replace src

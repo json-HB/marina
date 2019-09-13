@@ -24,6 +24,11 @@
     <script src="<%= webpackConfig.output.publicPath %>/jquery.js"></script>
   </head>
   <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
+    <script>
+      var G = {
+        VERSION: "{{VERSION}}"
+      };
+    </script>
     <%= require('html-loader!./src/html/loading/loading.html') %> <%=
     require('html-loader!./src/html/include/rem.html') %> <%=
     require('html-loader!./src/html/section/index.html') %>
