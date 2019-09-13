@@ -43,7 +43,7 @@
 
 ### github hook
 ![github hook](https://github.com/json-HB/marina/blob/master/assert/githubHook.png)
-![hook result](https://github.com/json-HB/marina/blob/master/assert/result.png)
+![hook result](https://github.com/json-HB/marina/blob/master/assert/result.jpg)
 
 ### 部署服务器
 > nodeApi 文件
@@ -64,4 +64,4 @@
 
 ------
 
-`有不懂得可以讨论，或者提优化，一起经部`
+`有不懂得可以讨论，或者提优化，一起学习进步`
