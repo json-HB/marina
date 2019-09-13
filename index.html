@@ -18,8 +18,9 @@
     <meta name="keywords" content="" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="stylesheet" href="/bootstrap.css" />
+    <script src="/jquery.js"></script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
     <%= require('html-loader!./src/html/loading/loading.html') %> <%=
     require('html-loader!./src/html/include/rem.html') %> <%=
     require('html-loader!./src/html/section/index.html') %>

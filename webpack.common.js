@@ -1,11 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
-    jquery: ["./src/vendor/jquery.js"]
+    app: "./src/index.js"
   },
   output: {
     filename: "[name].[hash:5].js",
@@ -26,10 +26,6 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           priority: 20
         },
-        commons: {
-          name: "jquery",
-          chunks: "all"
-        },
         default: {
           minChunks: 2,
           priority: -20,
@@ -40,7 +36,15 @@ module.exports = {
   },
   target: "web",
   resolve: {
-    extensions: [".js", ".json", ".jsx", ".css"]
+    extensions: [".js", ".json", ".jsx", ".css"],
+    alias: {
+      util: path.resolve(__dirname, "./src/util/main.js"),
+      ejs: path.resolve(__dirname, "./src/html/ejs"),
+      static: path.resolve(__dirname, "./src/static")
+    }
+  },
+  externals: {
+    jquery: "jQuery"
   },
   module: {
     rules: [
@@ -125,10 +129,16 @@ module.exports = {
       {
         from: "src/image",
         to: "images"
+      },
+      {
+        from: "src/vendor/jquery.js"
       }
     ]),
+    new webpack.ProvidePlugin({
+      throttle: ["underscore", "throttle"]
+    }),
     new HtmlWebpackPlugin({
-      title: "document",
+      title: "KreditOne",
       favicon: path.resolve(__dirname, "favicon.ico"),
       filename: "index.html",
       template: path.resolve(__dirname, "index.html"),

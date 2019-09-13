@@ -19,6 +19,20 @@ const SVG = imagemin.svgo({
   plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
 });
 
+function outputLog(target) {
+  target.stdout.on("data", d => {
+    util.log(util.colors.green(String(d)));
+  });
+  target.stderr.on("data", d => {
+    util.log(util.colors.red(String(d)));
+  });
+  target.on("close", code => {
+    if (code != 0) {
+      util.log(util.colors.red(`webpack process exit, code is ${code}`));
+    }
+  });
+}
+
 // image minify
 gulp.task("imagemin", function(done) {
   gulp
@@ -63,14 +77,7 @@ gulp.task("g:webpack:build", function() {
     encoding: "utf8",
     cwd: process.cwd()
   });
-  webpack.stdout.on("data", d => {
-    util.log(String(d));
-  });
-  webpack.on("close", code => {
-    if (code != 0) {
-      util.log(util.colors.red(`webpack process exit, code is ${code}`));
-    }
-  });
+  outputLog(webpack);
 });
 
 // webpack dev server
@@ -79,14 +86,7 @@ gulp.task("g:webpack:dev", function() {
     encoding: "utf8",
     cwd: process.cwd()
   });
-  webpack.stdout.on("data", d => {
-    util.log(util.colors.green(String(d)));
-  });
-  webpack.on("close", code => {
-    if (code != 0) {
-      util.log(util.colors.red(`webpack process exit, code is ${code}`));
-    }
-  });
+  outputLog(webpack);
 });
 
 // start local server

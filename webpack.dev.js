@@ -6,7 +6,19 @@ module.exports = merge(common, {
   devServer: {
     contentBase: "dist",
     hot: true,
-    open: true
+    open: true,
+    port: 3001,
+    clientLogLevel: "info", //none | error | warning | info
+    host: "0.0.0.0",
+    headers: {
+      "x-custom-name": "json"
+    },
+    proxy: {
+      "/api": {
+        target: "http://haibo.online:3007/",
+        pathRewrite: { "^/api": "" }
+      }
+    }
   },
   devtool: "inline-source-map",
   mode: "development",

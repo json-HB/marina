@@ -1,0 +1,85 @@
+<!-- Indicators -->
+<ol class="carousel-indicators">
+  <% if (data.data.length) {
+    let length = Math.ceil(data.data.length / (data.isMobile ? 1 : 2));
+    console.log(length, data.isMobile);
+    let indictorArr = new Array(length).fill(1);
+    indictorArr.forEach((item, index) => {
+    %>
+      <li data-target="#carousel-jason" class="<%= index == 0 ? 'active' : '' %>" data-slide-to="<%= index %>"></li>
+    <% }); %>
+  <% } %>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner container" role="listbox">
+    <% if (data.data.length) {
+      if (data.isMobile) {
+      data.data.forEach((item, index) => { %>
+          <div class="item <%= index == 0 ? 'active' : '' %> row">
+              <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="img pull-left">
+                  <img src="<%= item.icon %>" alt="" />
+                </div>
+                <div class="content pull-right">
+                  <h3><%= item.name %></h3>
+                  <h4><%= item.position %></h4>
+                  <% item.description.forEach((desc) => { %>
+                    <p>
+                        <%= desc %>
+                    </p>
+                  <% }) %>
+                </div>
+              </div>
+          </div>
+              <% });} else {
+                let dealData = [];
+                data.data.forEach((item1, i) => {
+                  let index = Math.floor(i / 2);
+                  if (dealData[index] && dealData[index]) {
+                    dealData[index].push(item1);
+                  } else {
+                    dealData[index] = [item1];
+                  }
+                });
+                dealData.forEach((itemArr, index) => { %>
+                  <div class="item <%= index == 0 ? 'active' : '' %> row">
+                    <% itemArr.forEach((item) => { %>
+                      <div class="col-lg-6 col-md-6 col-xs-12">
+                          <div class="img pull-left">
+                            <img src="<%= item.icon %>" alt="" />
+                          </div>
+                          <div class="content pull-right">
+                            <h3><%= item.name %></h3>
+                            <h4><%= item.position %></h4>
+                            <% item.description.forEach((desc) => { %>
+                              <p>
+                                  <%= desc %>
+                              </p>
+                            <% }); %>
+                          </div>
+                        </div>
+                    <% }) %>
+                  </div>
+                <% }); %>
+           <% }} %>
+  </div>
+</div>
+
+<!-- Controls -->
+<a
+  class="left carousel-control"
+  href="#carousel-jason"
+  role="button"
+  data-slide="prev"
+>
+  <span class="chevron-left" aria-hidden="true">&lt;</span>
+</a>
+<a
+  class="right carousel-control"
+  href="#carousel-jason"
+  role="button"
+  data-slide="next"
+>
+  <span class="chevron-right" aria-hidden="true">&gt;</span>
+</a>

@@ -12,9 +12,6 @@ bower_components
 .bower-tmp
 .cacheFile
 
-# image
-src/image
-
 # Logs
 logs
 *.log
