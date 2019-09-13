@@ -22,9 +22,19 @@ $(function() {
   Object.assign(carouseData, {
     isMobile: isMobile()
   });
-  log(carouseData);
-  log(carouseTpl(carouseData));
   $("#carousel-jason").html(carouseTpl(carouseData));
+
+  // nav collapse
+
+  $(document).on("click", function(ev) {
+    log("click", ev.target);
+    if (isMobile()) {
+      if (!$.contains($(".navbar-nav").get(0), ev.target)) {
+        log("inner");
+        $(".navbar-collapse").collapse("hide");
+      }
+    }
+  });
 
   // form submit
   $("form").submit(ev => {
@@ -40,7 +50,6 @@ $(function() {
           : item.split("=")[1]) + "\n";
     });
     const mailTo = "marina.wei@kreditone.in";
-    log(encodeURIComponent(resDel).replace(/%40/, "@"));
     const A = $(
       `<a href='mailto:${mailTo}?subject=Customer&body=${encodeURIComponent(
         resDel
@@ -68,6 +77,22 @@ $(function() {
     ) {
       evt.preventDefault();
     }
+  });
+
+  $('input[type="text"]').on("input", function(evt) {
+    $(this).val(evt.target.value.replace(/[^a-zA-Z-_\s\d]/g, ""));
+  });
+
+  $('input[type="email"]').on("input", function(evt) {
+    var pattern = new RegExp(
+      "[`~!#%$^&*()=|{}':;',\\[\\].<>/?~！#￥……&*（）——|{}【】‘；：”“'。，、？]",
+      "g"
+    );
+    $(this).val(evt.target.value.replace(pattern, ""));
+  });
+
+  $("#phoneNumber").on("input", function(evt) {
+    $(this).val(evt.target.value.replace(/[^\d]/g, ""));
   });
 
   // select city
