@@ -38,4 +38,4 @@
 
 ### 优化图片
 
-- 进行图片优化执行`gulp imagemin`。
+- 进行图片优化执行`gulp imagemin`
