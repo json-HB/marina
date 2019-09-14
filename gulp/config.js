@@ -9,7 +9,9 @@ try {
     process.env.branch || "master"
   ];
 } catch (e) {
-  CONFIG = require((path.resolve("../" + "config/marinaConfig.json"))[process.env.branch || "master"];
+  CONFIG = require(path.resolve("../" + "config/marinaConfig.json"))[
+    process.env.branch || "master"
+  ];
 }
 
 CONFIG = Object.assign(
