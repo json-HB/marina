@@ -1,14 +1,13 @@
 const ArgCONFIG = require("yargs").argv;
 const path = require("path");
-
-console.log(path.resolve("../" + "config/marinaConfig.json"));
+const fs = require("fs");
 
 let CONFIG;
-try {
+if (fs.existsSync(path.resolve("./config.json"))) {
   CONFIG = require(path.resolve("./config.json"))[
     process.env.branch || "master"
   ];
-} catch (e) {
+} else {
   CONFIG = require(path.resolve("../" + "config/marinaConfig.json"))[
     process.env.branch || "master"
   ];
