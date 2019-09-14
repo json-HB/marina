@@ -1,22 +1,16 @@
-const fs = require("fs");
 const path = require("path");
 const gulp = require("gulp");
 const chalk = require("chalk");
 const through = require("through2");
 const mime = require("mime");
 const oss = require("ali-oss");
+const { CONFIG } = require("./config.js");
 
 mime.default_type = "text/plain";
 
-const conf = JSON.parse(
-  fs.readFileSync(path.resolve(process.cwd(), "config.json"))
-);
+console.log(chalk.green(`${JSON.stringify(CONFIG, null, 2)}`));
 
-console.log(chalk.green(`${JSON.stringify(conf, null, 2)}`));
-
-const { accessKeyId, accessKeySecret, bucket, endpoint } = conf[
-  process.env.NODE_ENV || "master"
-];
+const { accessKeyId, accessKeySecret, bucket, endpoint } = CONFIG;
 
 if (!accessKeyId || !accessKeySecret) {
   throw new Error(
