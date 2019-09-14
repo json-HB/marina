@@ -19,9 +19,9 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link
       rel="stylesheet"
-      href="<%= webpackConfig.output.publicPath %>/bootstrap.css"
+      href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/bootstrap.css"
     />
-    <script src="<%= webpackConfig.output.publicPath %>/jquery.js"></script>
+    <script src="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/jquery.js"></script>
   </head>
   <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
     <script>

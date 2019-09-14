@@ -3,6 +3,9 @@ const webpack = require("webpack");
 const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
+  output: {
+    publicPath: "/"
+  },
   devServer: {
     contentBase: "dist",
     hot: true,

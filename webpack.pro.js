@@ -4,6 +4,9 @@ const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = merge(common, {
+  output: {
+    publicPath: process.env.publicPath
+  },
   mode: "production",
   plugins: [
     new CleanWebpackPlugin({}),
