@@ -72,8 +72,8 @@ gulp.task("bootstrap", function(cb) {
 });
 
 // start project
-gulp.task("build", function() {
-  runSequence("g:webpack:build", "srcCDN", "propoMerge");
+gulp.task("build", ["g:webpack:build"], function(cb) {
+  runSequence("srcCDN", "propoMerge", cb);
 });
 
 // start project
@@ -82,8 +82,8 @@ gulp.task("dev", function() {
 });
 
 // propertyMerge
-gulp.task("propoMerge", function() {
-  gulp
+gulp.task("propoMerge", function(cb) {
+  return gulp
     .src("dist/*.html")
     .pipe(
       through.obj(function(file, obj, done) {
@@ -100,8 +100,8 @@ gulp.task("propoMerge", function() {
 });
 
 // replace src
-gulp.task("srcCDN", function() {
-  gulp
+gulp.task("srcCDN", function(cb) {
+  return gulp
     .src("dist/*.html")
     .pipe(
       through.obj(function(file, obj, done) {
@@ -130,7 +130,7 @@ gulp.task("g:webpack:build", function(cb) {
   const webpack = require("child_process").execSync("npm run  webpack:build", {
     encoding: "utf8",
     cwd: process.cwd(),
-    env: Object.assign(process.env, { publicPath: publicPath })
+    env: Object.assign(process.env, { publicPath })
   });
   // outputLog(webpack);
   cb();

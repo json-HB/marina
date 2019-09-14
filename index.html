@@ -18,6 +18,10 @@
     <meta name="keywords" content="" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link
+      rel="shortcut icon"
+      href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/images/favicon.ico"
+    />
+    <link
       rel="stylesheet"
       href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/bootstrap.css"
     />

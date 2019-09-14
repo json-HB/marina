@@ -3,7 +3,7 @@ const path = require("path");
 
 let CONFIG;
 try {
-  CONFIG = require(path.resolve("./conig.json"))[
+  CONFIG = require(path.resolve("./config.json"))[
     process.env.branch || "master"
   ];
 } catch (e) {
@@ -13,6 +13,7 @@ try {
 }
 
 CONFIG = Object.assign(
+  {},
   CONFIG,
   process.env,
   {

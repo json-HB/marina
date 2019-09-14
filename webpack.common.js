@@ -138,7 +138,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: "KreditOne",
-      favicon: path.resolve(__dirname, "src/static/favicon.ico"),
       filename: "index.html",
       template: path.resolve(__dirname, "index.html"),
       minify: {
