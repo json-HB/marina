@@ -1,5 +1,6 @@
 const less = require("gulp-less");
 const gulp = require("gulp");
+const path = require("path");
 const cssnano = require("gulp-cssnano");
 const imagemin = require("gulp-imagemin");
 const through = require("through2");
@@ -7,12 +8,8 @@ const fs = require("fs");
 const util = require("gulp-util");
 const bs = require("browser-sync").create();
 const runSequence = require("run-sequence");
-let CONFIG = require("yargs").argv;
 const requireAll = require("require-all");
-const conf = JSON.parse(fs.readFileSync(__dirname + "/config.json"))[
-  process.env.NODE_ENV || "master"
-];
-const publicPath = conf["publicPath"];
+const { CONFIG } = require("./gulp/config.js");
 
 requireAll({
   dirname: __dirname + "/gulp",
@@ -20,15 +17,9 @@ requireAll({
   recursive: true
 });
 
-CONFIG = Object.assign(conf, process.env, {
-  BUILD_TIME: new Date().toISOString()
-});
-
-Object.keys(CONFIG).forEach(key => {
-  key.startsWith("npm_") && Reflect.deleteProperty(CONFIG, key);
-});
-
 console.log(CONFIG);
+
+const publicPath = CONFIG.publicPath;
 
 // image type
 const PNG = imagemin.optipng({ optimizationLevel: 5 });
@@ -139,7 +130,7 @@ gulp.task("g:webpack:build", function(cb) {
   const webpack = require("child_process").execSync("npm run  webpack:build", {
     encoding: "utf8",
     cwd: process.cwd(),
-    env: Object.assign(process.env, { publicPath })
+    env: Object.assign(process.env, { publicPath: publicPath })
   });
   // outputLog(webpack);
   cb();
