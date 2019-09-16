@@ -101,7 +101,7 @@ $(function() {
     const day1 = $("#day1");
     const day2 = $("#day2");
     const now = Date.now();
-    const launchTime = new Date(2019, 9, 1).valueOf();
+    const launchTime = new Date(2019, 10, 7).valueOf();
     const diff = launchTime - now;
     function setTime(d1, d2) {
       day1.text(d1);
