@@ -73,7 +73,7 @@ gulp.task("bootstrap", function(cb) {
 
 // start project
 gulp.task("build", ["g:webpack:build"], function(cb) {
-  runSequence("srcCDN", "propoMerge", cb);
+  runSequence("srcCDN", "propoMerge", "sw", cb);
 });
 
 // start project
@@ -146,15 +146,19 @@ gulp.task("g:webpack:dev", function() {
 });
 
 // start local server
-gulp.task("server", function() {
+gulp.task("server", function(cb) {
   bs.init(
     {
+      ui: {
+        port: 3010
+      },
       server: {
         baseDir: "dist"
       }
     },
     function() {
       util.log(util.colors.green("server start for test!"));
+      cb();
     }
   );
 });

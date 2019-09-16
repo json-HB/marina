@@ -5,6 +5,7 @@ const through = require("through2");
 const mime = require("mime");
 const oss = require("ali-oss");
 const { CONFIG } = require("./config.js");
+const fs = require("fs");
 
 mime.default_type = "text/plain";
 
@@ -30,6 +31,10 @@ const client = new oss({
   bucket,
   endpoint
 });
+
+// const cache = JSON.parse(
+//   fs.readFileSync(process.cwd() + "/.cacheFile", "utf-8")
+// );
 
 function deployOss(opt, done) {
   let failList = [];
@@ -86,10 +91,12 @@ function deployOss(opt, done) {
             done();
           }
         } else {
+          // cache.workbox = 1;
           done();
         }
       })
       .on("error", err => {
+        // cache.workbox = 1;
         done(err);
       });
   })();
@@ -107,4 +114,6 @@ gulp.task("deploy-oss", done => {
 gulp.task("oss", ["deploy-oss"], done => {
   done();
   console.log(chalk.blue("deploy success!"));
+  // console.log(cache);
+  // fs.writeFileSync(process.cwd() + "/.cacheFile", JSON.stringify(cache));
 });
