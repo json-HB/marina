@@ -11,7 +11,7 @@ $(function() {
   // screenHeight
   const screenHeight = $(window).height();
 
-  // 调试carouse
+  // 调试carouse;
   // $(".carousel").carousel({
   //   interval: 1000000
   // });

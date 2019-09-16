@@ -10,6 +10,11 @@ module.exports = merge(common, {
   mode: "production",
   plugins: [
     new CleanWebpackPlugin({}),
+    new webpack.HashedModuleIdsPlugin({
+      hashFunction: "sha256",
+      hashDigest: "hex",
+      hashDigestLength: 6
+    }),
     new webpack.BannerPlugin({
       banner: `Author jihaibo; BuildTime: ${new Date().toUTCString()}`
     })

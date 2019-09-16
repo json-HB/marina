@@ -133,9 +133,6 @@ module.exports = {
         from: "src/vendor/jquery.js"
       }
     ]),
-    new webpack.ProvidePlugin({
-      throttle: ["underscore", "throttle"]
-    }),
     new HtmlWebpackPlugin({
       title: "KreditOne",
       filename: "index.html",

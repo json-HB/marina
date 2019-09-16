@@ -26,7 +26,7 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   mode: "development",
   plugins: [
-    new webpack.HashedModuleIdsPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 });

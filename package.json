@@ -57,6 +57,7 @@
     "build": "gulp build",
     "webpack:build": "webpack --config webpack.pro.js --progress --colors",
     "webpack:dev": "webpack-dev-server --color --config webpack.dev.js",
+    "build:local": "branch=develop npm run build",
     "gzip": "./bin/deploy.sh"
   },
   "author": "jason",
