@@ -86,13 +86,13 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="text-left">
           <span class="dec">WEBSITE VISITORS</span>
-          <span>200,000</span>
+          <span id='visiter'></span>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="text-right">
           <span class="dec">APP DOWNLOADS</span>
-          <span>200,000</span>
+          <span id='download'></span>
         </div>
       </div>
     </div>
@@ -137,21 +137,30 @@
           <span class="help-block"></span>
         </div>
         <div
-          class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6 col-xs-12"
+          class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group form-group-lg"
         >
-          <div class="select-arrow ">
-            <select id="selectCity" class="form-control" name="City">
-                <option value="">City</option>
-                <option value="Bengalura">Bangalore</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Hyderabad">Hyderabad</option>
-                <option value="Pune">Pune</option>
-                <option value="Visakhapatnam">Visakhapatnam</option>
-                <option value="Vijayawada">Vijayawada</option>
-                <option value="Sikandrabad">Sikandrabad</option>
-            </select>
-          </div>
-          <span class="help-block"></span>
+        <div class="input-group">
+          <input
+              type="text"
+              name='City'
+              id="selectCityInput"
+              class="form-control toggle-col hide"
+              placeholder="City"
+            />
+            <div class="select-arrow">
+              <select id="selectCitySelect" class="form-control" name="City">
+                  <option value="">City</option>
+                  <option value="Bengalura">Bangalore</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Pune">Pune</option>
+                  <option value="Visakhapatnam">Visakhapatnam</option>
+                  <option value="Vijayawada">Vijayawada</option>
+                  <option value="Sikandrabad">Sikandrabad</option>
+              </select>
+            </div>
+            <span id='toggleInput' class="input-group-addon">Toggle</span>
+        </div>
         </div>
       </div>
       <div class="text-center">
@@ -185,8 +194,9 @@ service to eligible banked/un-banked Indian citizens in a Easy, Fast, Transparen
           </p>
           <p>We trust you, we help you, We grow with you. One Credit For All Indians.
           </p>
-          <p class='clearfix'><span> Experience today Apply Now </span><a class='pull-right hidden-xs' href="https://www.baidu.com" target="_blank">understand more</a></p>
-          <a class='visible-xs-12' class='pull-right' href="https://www.baidu.com" target="_blank">understand more</a>
+          <p><span> Experience today</span></p>
+          <p class='clearfix'>Apply Now <a class='pull-right hidden-xs' href="https://www.baidu.com" target="_blank">understand more</a></p>
+          <a class='visible-xs-block' class='pull-right' href="https://www.baidu.com" target="_blank">understand more</a>
       </div>
     </div>
   </div>

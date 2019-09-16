@@ -412,6 +412,10 @@
           &:first-child {
             margin-right: 20px;
           }
+          .norihgtborder() {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
           input {
             height: 87px;
             padding: 32px;
@@ -423,12 +427,20 @@
             &:input-placeholde {
               color: #ccc;
             }
+            &.toggle-col {
+              .norihgtborder();
+            }
+          }
+          .input-group-addon {
+            font-size: 24px;
+            cursor: pointer;
           }
           select {
             height: 87px;
             background: rgba(255, 255, 255, 1);
             border: 1px solid rgba(153, 153, 153, 1);
             border-radius: 8px;
+            .norihgtborder();
             font-size: 24px;
             color: #999;
             text-indent: 30px;
@@ -443,10 +455,11 @@
               position: absolute;
               width: 0;
               height: 0;
-              right: 30px;
-              top: 46%;
-              border: 10px solid transparent;
+              right: 0.3rem;
+              top: 39px;
+              border: 0.1rem solid transparent;
               border-top-color: #999;
+              z-index: 10;
             }
           }
         }
@@ -542,7 +555,7 @@
                 width: 0;
                 height: 0;
                 right: 30px;
-                top: 46%;
+                top: 42px;
                 border: 14px solid transparent;
                 border-top-color: #999;
               }
@@ -605,7 +618,7 @@
       }
       .pic {
         position: absolute;
-        bottom: 0;
+        bottom: -54px;
         right: -38px;
         img {
           width: 200px;
@@ -641,10 +654,12 @@
             margin-bottom: 12px;
             &:last-of-type {
               margin-bottom: 12px;
-              clear: none;
               span {
-                vertical-align: middle;
+                vertical-align: none;
               }
+            }
+            &.clearfix {
+              clear: none;
             }
           }
           a {

@@ -31,10 +31,12 @@ export function isMobile() {
   return mobile_flag;
 }
 
-export function RegNum(str) {
+export const RegNum = function(str) {
   str = String(str);
-  return str.replace(/(\d)(?=(?:\d{3})+$)/g, "$1,");
-}
+  return str
+    .replace(/(\d)(?=(?:\d{3})$)/g, "$1,")
+    .replace(/(\d)(?=(?:\d{2})+,\d{3}$)/g, "$1,");
+};
 
 export const throttle = function(func, wait, options) {
   var timeout, context, args, result;

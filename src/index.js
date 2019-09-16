@@ -1,6 +1,6 @@
 import "./preboot";
 import "./css/main/index.less";
-import { throttle } from "util";
+import { throttle, RegNum } from "util";
 import carouseTpl from "ejs/carouse.ejs";
 import carouseData from "static/carouse.json";
 import { isMobile } from "./util/main";
@@ -91,7 +91,7 @@ $(function() {
   });
 
   // select city
-  $("#selectCity").on("change", function() {
+  $("#selectCitySelect").on("change", function() {
     let val = $(this).val();
     $(this).css("color", val ? "black" : "#999");
   });
@@ -167,4 +167,14 @@ $(function() {
     }
   }
   homeFullScreen();
+
+  // visiter and download
+  $("#visiter").text(RegNum(1992000));
+  $("#download").text(RegNum(2000000));
+
+  // form toggle
+  $("#toggleInput").on("click", function() {
+    $(".select-arrow").toggleClass("hide");
+    $("#selectCityInput").toggleClass("hide");
+  });
 });
