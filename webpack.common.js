@@ -138,14 +138,15 @@ module.exports = {
       filename: "index.html",
       template: path.resolve(__dirname, "index.html"),
       minify: {
-        collapseWhitespace: true,
         removeComments: true,
+        collapseWhitespace: true,
         collapseBooleanAttributes: true,
         collapseInlineTagWhitespace: true,
         conservativeCollapse: true,
         minifyJS: {
           compress: true
-        }
+        },
+        minifyCSS: true
       }
     })
   ]

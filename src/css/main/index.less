@@ -574,24 +574,24 @@
   .container {
     .header();
     .content {
-      padding: 50px 0px 50px 50px;
-      height: 282px;
+      padding: 50px 0px 20px 50px;
       background: rgba(255, 255, 255, 1);
       border-radius: 8px;
       position: relative;
       margin-bottom: 109px;
       .desc {
         width: calc(100% - 188px);
-        padding-right: 72px;
+        padding-right: 50px;
         p {
           font-size: 18px;
           color: #666;
-          line-height: 24px;
-          &:first-child {
-            margin-bottom: 18px;
-          }
+          line-height: 22px;
+          margin-bottom: 12px;
           &:last-of-type {
-            margin-bottom: 24px;
+            margin-bottom: 0px;
+            span {
+              vertical-align: sub;
+            }
           }
         }
         a {
@@ -606,9 +606,9 @@
       .pic {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: -38px;
         img {
-          width: 188px;
+          width: 200px;
         }
       }
     }
@@ -623,7 +623,7 @@
     background-attachment: fixed;
     .container {
       .content {
-        padding: 43px 0px 52px 32px;
+        padding: 43px 30px 52px 30px;
         height: auto;
         background: rgba(255, 255, 255, 1);
         border-radius: 8px;
@@ -638,11 +638,13 @@
             font-size: 24px;
             color: #666;
             line-height: 36px;
-            &:first-child {
-              margin-bottom: 18px;
-            }
+            margin-bottom: 12px;
             &:last-of-type {
-              margin-bottom: 24px;
+              margin-bottom: 12px;
+              clear: none;
+              span {
+                vertical-align: middle;
+              }
             }
           }
           a {
@@ -652,7 +654,7 @@
           }
         }
         .spacer {
-          height: 110px;
+          height: 380px;
           width: 0px;
           float: right;
           display: block;
@@ -661,6 +663,7 @@
           float: right;
           height: 305px;
           position: relative;
+          right: -60px;
           clear: right;
           img {
             width: 178px;
