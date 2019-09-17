@@ -5,11 +5,9 @@ const through = require("through2");
 const mime = require("mime");
 const oss = require("ali-oss");
 const { CONFIG } = require("./config.js");
-const fs = require("fs");
+// const fs = require("fs");
 
 mime.default_type = "text/plain";
-
-console.log(chalk.green(`${JSON.stringify(CONFIG, null, 2)}`));
 
 const { accessKeyId, accessKeySecret, bucket, endpoint } = CONFIG;
 

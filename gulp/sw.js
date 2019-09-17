@@ -19,7 +19,7 @@ gulp.task("sw", cb => {
       runtimeCaching: [
         // 配置路由请求缓存 对应 workbox.routing.registerRoute
         {
-          urlPattern: new RegExp(`${CDN}\/jquery\.js$`),
+          urlPattern: /jquery\.js/,
           handler: "cacheFirst"
         },
         {
