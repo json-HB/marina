@@ -38,11 +38,12 @@ $(function() {
     const res = $("form").serialize();
     let resDel = "";
     res.split("&").forEach(item => {
-      resDel += item.split("=")[0] + ": ";
-      resDel +=
-        (item.split("=")[0] == "PhoneNumber"
-          ? `+91 ${item.split("=")[1]}`
-          : item.split("=")[1]) + "\n";
+      let part1 = item.split("=")[0];
+      let part2 = item.split("=")[1];
+      if (part1 == "CityHide") return;
+      resDel += part1 + ": ";
+      resDel += part1 == "PhoneNumber" ? `+91 ${part2}` : part2;
+      resDel += "\n";
     });
     const mailTo = "marina.wei@kreditone.in";
     const A = $(
@@ -133,9 +134,6 @@ $(function() {
     });
   });
 
-  // mobile phone
-  const isPhone = $(document).width() < 500;
-
   function scrollFuc() {
     const scrollTop = $(window).scrollTop();
     const $top = $("#back-to-top");
@@ -172,9 +170,18 @@ $(function() {
   $("#visiter").text(RegNum(1992000));
   $("#download").text(RegNum(2000000));
 
+  let toggle = true;
   // form toggle
   $("#toggleInput").on("click", function() {
     $(".select-arrow").toggleClass("hide");
     $("#selectCityInput").toggleClass("hide");
+    if (toggle) {
+      $("#selectCitySelect").attr("name", "CityHide");
+      $("#selectCityInput").attr("name", "City");
+    } else {
+      $("#selectCitySelect").attr("name", "City");
+      $("#selectCityInput").attr("name", "CityHide");
+    }
+    toggle = false;
   });
 });
