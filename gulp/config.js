@@ -25,7 +25,8 @@ let getConfig = function() {
   );
 
   Object.keys(CONFIG).forEach(key => {
-    key.startsWith("npm_") && Reflect.deleteProperty(CONFIG, key);
+    (key.startsWith("npm_") || ["LS_COLORS"].includes(key)) &&
+      Reflect.deleteProperty(CONFIG, key);
   });
   getConfig = function() {};
   return CONFIG;
