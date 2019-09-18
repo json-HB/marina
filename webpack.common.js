@@ -135,7 +135,7 @@ module.exports = {
         from: "src/vendor/jquery.js"
       },
       {
-        from: "src/static/mainfest.json"
+        from: "src/static/manifest.webmanifest"
       }
     ]),
     new HtmlWebpackPlugin({
