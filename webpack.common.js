@@ -135,7 +135,7 @@ module.exports = {
         from: "src/vendor/jquery.js"
       },
       {
-        from: "src/static/manifest.webmanifest"
+        from: "src/static/haibo.webmanifest"
       }
     ]),
     new HtmlWebpackPlugin({
