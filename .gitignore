@@ -4,6 +4,7 @@
 deploy
 # favicon.ico
 config.json
+dev
 
 *~
 ### Bower ###

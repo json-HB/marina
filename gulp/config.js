@@ -16,7 +16,7 @@ let getConfig = function() {
 
   CONFIG = Object.assign(
     {},
-    CONFIG,
+    { ...CONFIG },
     process.env,
     {
       BUILD_TIME: new Date().toISOString()

@@ -54,7 +54,7 @@ function deployOss(opt, done) {
           const uploadPath = path
             .relative(file.base, file.path)
             .replace(/^\.?\/?/, "");
-          const content = String(file.contents);
+          const content = file.contents;
           const degest = require("crypto")
             .createHash("md5")
             .update(content)

@@ -3,13 +3,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 
+console.log(process.env.dist);
+
 module.exports = {
   entry: {
     app: "./src/index.js"
   },
   output: {
     filename: "[name].[hash:5].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, process.env.dist || "dist")
   },
   optimization: {
     splitChunks: {
@@ -131,6 +133,9 @@ module.exports = {
       },
       {
         from: "src/vendor/jquery.js"
+      },
+      {
+        from: "src/static/mainfest.json"
       }
     ]),
     new HtmlWebpackPlugin({

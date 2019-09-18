@@ -5,14 +5,16 @@ const { CONFIG } = require("./config.js");
 
 const CDN = CONFIG.publicPath;
 
+const dist = CONFIG.dist || "dist";
+
 gulp.task("sw", cb => {
   workbox
     .generateSW({
       cacheId: "gulp-pwa", // 设置前缀
-      globDirectory: "dist", //匹配根目录
+      globDirectory: dist, //匹配根目录
       globPatterns: ["**/*.{html,js,css,png,jpg}"], // 匹配的文件
       globIgnores: ["sw.js", "index.html"], // 忽略的文件
-      swDest: `./dist/sw.js`, // 输出 Service worker 文件
+      swDest: `./${dist}/sw.js`, // 输出 Service worker 文件
       clientsClaim: true, // Service Worker 被激活后使其立即获得页面控制权
       skipWaiting: true, // 强制等待中的 Service Worker 被激活
       importWorkboxFrom: "local",
