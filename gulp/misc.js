@@ -88,3 +88,13 @@ gulp.task("srcCDN", function(cb) {
     )
     .pipe(gulp.dest(dist));
 });
+
+// pwa task
+gulp.task("pwa", function(cb) {
+  gulp
+    .src(["src/static/pwa/*", "src/static/*.webmanifest"], {
+      base: "src/static/"
+    })
+    .pipe(gulp.dest(dist))
+    .on("finish", cb);
+});

@@ -21,7 +21,7 @@ console.log(CONFIG);
 
 // start project
 gulp.task("build", ["g:webpack:build"], function(cb) {
-  runSequence("srcCDN", "propoMerge", "sw", cb);
+  runSequence("srcCDN", "propoMerge", "sw", "pwa", cb);
 });
 
 // start project
