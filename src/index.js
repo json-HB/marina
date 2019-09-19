@@ -1,9 +1,8 @@
 import "./preboot";
 import "./css/main/index.less";
-import { throttle, RegNum } from "util";
+import { throttle, RegNum, isMobile, Alert } from "util";
 import carouseTpl from "ejs/carouse.ejs";
 import carouseData from "static/carouse.json";
-import { isMobile } from "./util/main";
 
 $(function() {
   $(".bouncing-loader").addClass("hidden");
@@ -51,10 +50,13 @@ $(function() {
         resDel
       ).replace(/%2540/, "@")}' target='_blank'></a>`
     ).appendTo("body");
-    A.get(0).click();
+    Alert.show(
+      "Dear customer, Thanks for early sign up, We will contact you soon!"
+    );
     setTimeout(() => {
+      A.get(0).click();
       A.remove();
-    }, 1000);
+    }, 500);
   });
 
   // phoneNumber

@@ -78,3 +78,31 @@ export const throttle = function(func, wait, options) {
 
   return throttled;
 };
+
+const AlertDom = `<div class='alert'>
+  <p class='alert-content'></p>
+  <span class='alert-close'>X</sann>
+</div>`;
+
+export const Alert = {
+  timer: null,
+  show(content, opt = {}) {
+    if ($(".alert").get(0) == void 0) {
+      $("body").append(AlertDom);
+    }
+    const $alert = $(".alert");
+    clearTimeout(this.timer);
+    $alert.find(".alert-content").text(content);
+    setTimeout(() => {
+      $alert.addClass("show");
+    }, 2);
+    this.timer = setTimeout(() => {
+      this.close();
+    }, opt.time || 5000);
+    $(".alert-close").on("click", this.close);
+  },
+  close() {
+    $(".alert").removeClass("show");
+    clearTimeout(this.timer);
+  }
+};
