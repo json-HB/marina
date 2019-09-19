@@ -76,7 +76,11 @@ $(function() {
   });
 
   $('input[type="text"]').on("input", function(evt) {
-    $(this).val(evt.target.value.replace(/[^a-zA-Z-_\s\d]/g, ""));
+    if ($(this).attr("name") == "Name") {
+      $(this).val(evt.target.value.replace(/[^a-zA-Z]/g, ""));
+    } else {
+      $(this).val(evt.target.value.replace(/[^a-zA-Z-_\s\d]/g, ""));
+    }
   });
 
   $('input[type="email"]').on("input", function(evt) {

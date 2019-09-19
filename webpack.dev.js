@@ -10,7 +10,7 @@ module.exports = merge(common, {
     contentBase: "dist",
     hot: true,
     open: true,
-    port: 3001,
+    port: 3008,
     clientLogLevel: "info", //none | error | warning | info
     host: "0.0.0.0",
     headers: {

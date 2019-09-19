@@ -19,6 +19,20 @@ requireAll({
 
 console.log(CONFIG);
 
+function outputLog(target) {
+  target.stdout.on("data", d => {
+    util.log(util.colors.green(String(d)));
+  });
+  target.stderr.on("data", d => {
+    util.log(util.colors.red(String(d)));
+  });
+  target.on("close", code => {
+    if (code != 0) {
+      util.log(util.colors.red(`webpack process exit, code is ${code}`));
+    }
+  });
+}
+
 // start project
 gulp.task("build", ["g:webpack:build"], function(cb) {
   runSequence("srcCDN", "propoMerge", "sw", "pwa", cb);
