@@ -17,21 +17,21 @@ const CONFIG = {
   optimization: {
     splitChunks: {
       chunks: "all",
-      minSize: 30000,
-      minChunks: 10,
+      minSize: 10000,
+      minChunks: 1,
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
       automaticNameDelimiter: "-",
       name: true,
       cacheGroups: {
         vendors: {
+          chunks: "async",
           test: /[\\/]node_modules[\\/]/,
           priority: 20,
-          minChunks: 2,
           name: "vendors"
         },
         default: {
-          minChunks: 2,
+          minChunks: 3,
           priority: 10,
           name: "default",
           reuseExistingChunk: true

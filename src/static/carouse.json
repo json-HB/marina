@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "icon": "/images/icon-money.png",
+      "icon": "/images/custom1.png",
       "name": "Amit:",
       "position": "Banglore",
       "description": [
@@ -9,7 +9,7 @@
       ]
     },
     {
-      "icon": "/images/icon-money.png",
+      "icon": "/images/custom2.png",
       "name": "Deepti:",
       "position": "Pune",
       "description": [
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "icon": "/images/icon-money.png",
+      "icon": "/images/custom3.png",
       "name": "Ankur:",
       "position": "Cheinnai",
       "description": [

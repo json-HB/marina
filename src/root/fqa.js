@@ -1,5 +1,12 @@
 import "css/fqa.less";
+import { isMobile } from "util";
 
-console.log("hello");
+$(function() {
+  if (isMobile()) {
+    import("fastclick").then(({ default: FastClick }) => {
+      FastClick.attach(document.body);
+    });
+  }
+});
 
 export default {};
