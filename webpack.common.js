@@ -17,20 +17,23 @@ const CONFIG = {
   optimization: {
     splitChunks: {
       chunks: "all",
-      minSize: 10000,
-      minChunks: 1,
+      minSize: 30000,
+      minChunks: 10,
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
-      automaticNameDelimiter: "~",
+      automaticNameDelimiter: "-",
       name: true,
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: 20
+          priority: 20,
+          minChunks: 2,
+          name: "vendors"
         },
         default: {
           minChunks: 2,
-          priority: -20,
+          priority: 10,
+          name: "default",
           reuseExistingChunk: true
         }
       }
@@ -42,7 +45,8 @@ const CONFIG = {
     alias: {
       util: path.resolve(__dirname, "./src/util/main.js"),
       ejs: path.resolve(__dirname, "./src/html/ejs"),
-      static: path.resolve(__dirname, "./src/static")
+      static: path.resolve(__dirname, "./src/static"),
+      css: path.resolve(__dirname, "./src/css/main")
     }
   },
   externals: {
@@ -51,10 +55,10 @@ const CONFIG = {
   module: {
     rules: [
       {
-        test: /\.(c|le)ss$/,
+        test: new RegExp(`\.(c|le)ss$`),
         use: [
           {
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: "style-loader"
           },
           {
             loader: "css-loader" // translates CSS into CommonJS
@@ -142,6 +146,10 @@ const CONFIG = {
 const makePlugins = configs => {
   // 基础插件
   const plugins = configs.plugins;
+  const chunksArr = {
+    fqa: ["fqa"],
+    index: ["index", "vendors", "default"]
+  };
 
   // 根据 entry 自动生成 HtmlWebpackPlugin 配置，配置多页面
   Object.keys(configs.entry).forEach(item => {
@@ -160,11 +168,11 @@ const makePlugins = configs => {
             compress: true
           },
           minifyCSS: true
-        }
+        },
+        chunks: chunksArr[item]
       })
     );
   });
-
   return plugins;
 };
 

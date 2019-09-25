@@ -1,5 +1,5 @@
 import "../preboot";
-import "../css/main/index.less";
+import "css/index.less";
 import { throttle, RegNum, isMobile, Alert } from "util";
 import carouseTpl from "ejs/carouse.ejs";
 import carouseData from "static/carouse.json";
