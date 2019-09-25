@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="Expires" content="0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="marina web" />
+    <meta name="keywords" content="" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="manifest" href="/haibo.webmanifest" />
+    <link
+      rel="shortcut icon"
+      href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/images/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/bootstrap.css"
+    />
+    <script src="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/jquery.js"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
+    <script>
+      var G = {
+        VERSION: "{{VERSION}}",
+        BUILD_TIME: "{{BUILD_TIME}}"
+      };
+    </script>
+    <%= require('html-loader!../html/loading/loading.html') %> <%=
+    require('html-loader!../html/include/rem.html') %> <%=
+    require('html-loader!../html/section/index.html') %>
+  </body>
+</html>

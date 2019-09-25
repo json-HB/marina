@@ -1,5 +1,5 @@
-import "./preboot";
-import "./css/main/index.less";
+import "../preboot";
+import "../css/main/index.less";
 import { throttle, RegNum, isMobile, Alert } from "util";
 import carouseTpl from "ejs/carouse.ejs";
 import carouseData from "static/carouse.json";
@@ -129,6 +129,7 @@ $(function() {
 
   // nav bar scroll
   $(".navbar-nav a").on("click", function(ev) {
+    if (/^\//.test($(this).attr("href"))) return;
     ev.preventDefault();
     let target = $(this)
       .attr("href")
@@ -191,3 +192,5 @@ $(function() {
     toggle = false;
   });
 });
+
+export default {};

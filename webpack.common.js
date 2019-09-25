@@ -5,9 +5,10 @@ const webpack = require("webpack");
 
 console.log(process.env.dist);
 
-module.exports = {
+const CONFIG = {
   entry: {
-    app: "./src/index.js"
+    index: path.join(__dirname, "/src/root/index.js"),
+    fqa: path.join(__dirname, "/src/root/fqa.js")
   },
   output: {
     filename: "[name].[hash:5].js",
@@ -134,22 +135,39 @@ module.exports = {
       {
         from: "src/vendor/jquery.js"
       }
-    ]),
-    new HtmlWebpackPlugin({
-      title: "KreditOne",
-      filename: "index.html",
-      template: path.resolve(__dirname, "index.html"),
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        collapseBooleanAttributes: true,
-        collapseInlineTagWhitespace: true,
-        conservativeCollapse: true,
-        minifyJS: {
-          compress: true
-        },
-        minifyCSS: true
-      }
-    })
+    ])
   ]
 };
+
+const makePlugins = configs => {
+  // 基础插件
+  const plugins = configs.plugins;
+
+  // 根据 entry 自动生成 HtmlWebpackPlugin 配置，配置多页面
+  Object.keys(configs.entry).forEach(item => {
+    plugins.push(
+      new HtmlWebpackPlugin({
+        title: "KreditOne",
+        filename: `${item}.html`,
+        template: path.resolve(__dirname, `src/template/${item}.html`),
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+          collapseInlineTagWhitespace: true,
+          conservativeCollapse: true,
+          minifyJS: {
+            compress: true
+          },
+          minifyCSS: true
+        }
+      })
+    );
+  });
+
+  return plugins;
+};
+
+CONFIG.plugins.concat(makePlugins(CONFIG));
+
+module.exports = CONFIG;
