@@ -174,7 +174,7 @@ $(function() {
   homeFullScreen();
 
   // visiter and download
-  $("#visiter").text(RegNum(1992000));
+  $("#visiter").text(RegNum(2000000));
   $("#download").text(RegNum(2000000));
 
   let toggle = true;
