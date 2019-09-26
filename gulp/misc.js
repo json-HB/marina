@@ -75,7 +75,11 @@ gulp.task("srcCDN", function(cb) {
           $1,
           $2
         ) {
-          if (/https?|\/\//.test($2) || !$2.startsWith("/")) {
+          if (
+            /https?|\/\//.test($2) ||
+            !$2.startsWith("/") ||
+            /\.html[#?]?/.test($2)
+          ) {
             return full;
           } else {
             return $1 + publicPath + $2 + '"';
