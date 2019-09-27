@@ -106,3 +106,21 @@ export const Alert = {
     clearTimeout(this.timer);
   }
 };
+
+export function getUrl() {
+  $.get(
+    "http://haibo.online:3007/url",
+    function(data) {
+      console.log(data, 444);
+      if (data.code == "0") {
+        $("#downloadApp").attr("href", data.url);
+      } else {
+        $("#downloadApp").attr(
+          "href",
+          "https://kreditone-dev.oss-cn-shenzhen.aliyuncs.com/kreditone.apk"
+        );
+      }
+    },
+    "json"
+  );
+}

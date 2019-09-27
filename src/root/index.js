@@ -1,11 +1,14 @@
 import "../preboot";
 import "css/index.less";
-import { throttle, RegNum, isMobile, Alert } from "util";
+import { throttle, RegNum, isMobile, Alert, getUrl } from "util";
 import carouseTpl from "ejs/carouse.ejs";
 import carouseData from "static/carouse.json";
 
 $(function() {
   $(".bouncing-loader").addClass("hidden");
+
+  // getUrl
+  getUrl();
 
   // screenHeight
   const screenHeight = $(window).height();
@@ -14,6 +17,8 @@ $(function() {
   // $(".carousel").carousel({
   //   interval: 1000000
   // });
+
+  $();
 
   // carouse render
   Object.assign(carouseData, {
