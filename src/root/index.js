@@ -18,8 +18,6 @@ $(function() {
   //   interval: 1000000
   // });
 
-  $();
-
   // carouse render
   Object.assign(carouseData, {
     isMobile: isMobile()
