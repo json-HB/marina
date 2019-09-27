@@ -61,7 +61,8 @@
     "webpack:build": "webpack --config webpack.pro.js --progress --colors",
     "webpack:dev": "webpack-dev-server --color --config webpack.dev.js",
     "build:local": "branch=develop npm run build",
-    "gzip": "./bin/deploy.sh"
+    "gzip:p": "./bin/deploy.sh",
+    "gzip:local": "./bin/deploy.sh dev"
   },
   "author": "jason",
   "license": "ISC",

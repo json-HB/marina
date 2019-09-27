@@ -10,6 +10,16 @@ $(function() {
   // getUrl
   getUrl();
 
+  // from fqa about
+  function jumpfromfqa() {
+    let hash = location.hash;
+    if (hash && /from=fqa/.test(hash)) {
+      move();
+    }
+  }
+
+  jumpfromfqa();
+
   // screenHeight
   const screenHeight = $(window).height();
 
@@ -111,7 +121,7 @@ $(function() {
     const day1 = $("#day1");
     const day2 = $("#day2");
     const now = Date.now();
-    const launchTime = new Date(2019, 9, 7).valueOf();
+    const launchTime = new Date(2019, 9, 18).valueOf();
     const diff = launchTime - now;
     function setTime(d1, d2) {
       day1.text(d1);
@@ -175,6 +185,24 @@ $(function() {
     }
   }
   homeFullScreen();
+
+  function move() {
+    $("html, body").animate(
+      { scrollTop: $("#about").position().top },
+      "linear",
+      function() {
+        $(".doudou").addClass("showDou");
+        setTimeout(() => {
+          $(".doudou").removeClass("showDou");
+        }, 2000);
+      }
+    );
+  }
+
+  // jump ablut
+  $(".jumpAbout").on("click", function() {
+    move();
+  });
 
   // visiter and download
   $("#visiter").text(RegNum(2000000));

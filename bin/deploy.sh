@@ -1,14 +1,16 @@
 #/bin/bash
 deployName=deploy
 filenname=website
-dest=$dist
+dest=$1
+
+echo $dest
 
 if [ ! -e $deployName ];
 then
     mkdir $deployName
 fi
 
-if [ -z $dist ];
+if [ -z $dest ];
 then
     dest=dist
 fi
