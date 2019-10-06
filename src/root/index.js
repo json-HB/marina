@@ -98,14 +98,6 @@ $(function() {
     }
   });
 
-  $('input[type="email"]').on("input", function(evt) {
-    var pattern = new RegExp(
-      "[`~!#%$^&*()=|{}':;',\\[\\].<>/?~！#￥……&*（）——|{}【】‘；：”“'。，、？]",
-      "g"
-    );
-    $(this).val(evt.target.value.replace(pattern, ""));
-  });
-
   $("#phoneNumber").on("input", function(evt) {
     $(this).val(evt.target.value.replace(/[^\d]/g, ""));
   });

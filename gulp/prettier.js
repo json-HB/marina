@@ -19,7 +19,7 @@ const safeRequireJson = function(path) {
 gulp.task("prettier", function(cb) {
   console.time("prettier");
   gulp
-    .src(["src/**/*.+(js|jsx)"])
+    .src(["src/**/*.+(js|jsx|ts)", "!src/vendor/*.js"])
     .pipe(
       through.obj(function(file, enc, next) {
         util.log(

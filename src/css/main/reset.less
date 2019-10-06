@@ -1,5 +1,6 @@
 @headerHeight: 60px;
 @baseColor: #ff8d31;
+@secondColor: #2196F3;
 
 html {
   background: white;
@@ -33,6 +34,22 @@ ul {
 
 p {
   margin: 0;
+}
+
+a {
+  color: @secondColor;
+  &:hover {
+    color: darken(@secondColor, 10%);
+  }
+  &:link {
+    color: darken(@secondColor, 10%);
+  }
+  &:active {
+    color: darken(@secondColor, 10%);
+  }
+  &:visited {
+    color: darken(@secondColor, 10%);
+  }
 }
 
 ::-webkit-scrollbar-track {

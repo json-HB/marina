@@ -2,8 +2,23 @@
 deployName=deploy
 filenname=website
 dest=$1
+server=$server
 
-echo $dest
+echo "Is start server $server"
+echo "server dist is $dest"
+
+testServer() {
+  cd $deployName
+  tar -xvf $filenname.tar.gz -C .
+  cd -
+  dist=$deployName gulp server
+}
+
+rm -rf $deployName
+if [ $? -eq '0' ]
+then
+    echo "delete $deployName success!"
+fi
 
 if [ ! -e $deployName ];
 then
@@ -25,7 +40,11 @@ tar -zcvf $filenname.tar.gz -C $dest/ .
 mv $filenname.tar.gz deploy/
 if [ $? -eq 0 ]
 then
-echo "deploy successful"
+echo "tar successful"
+if [ $server = 'true' ]
+then
+testServer
+fi
 else
-echo 'deploy wrong'
+echo 'tar wrong'
 fi

@@ -1,6 +1,6 @@
 {
   "name": "marina",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "description": "website",
   "main": "index.js",
   "dependencies": {
@@ -42,6 +42,7 @@
     "postcss": "^7.0.18",
     "postcss-loader": "^3.0.0",
     "postcss-plugin-px2rem": "^0.8.1",
+    "prettier-eslint": "^9.0.0",
     "require-all": "^3.0.0",
     "run-sequence": "^2.2.1",
     "style-loader": "^0.23.1",
@@ -61,8 +62,9 @@
     "webpack:build": "webpack --config webpack.pro.js --progress --colors",
     "webpack:dev": "webpack-dev-server --color --config webpack.dev.js",
     "build:local": "branch=develop npm run build",
-    "gzip:p": "./bin/deploy.sh",
-    "gzip:local": "./bin/deploy.sh dev"
+    "gzip:pro": "./bin/deploy.sh",
+    "gzip:local": "./bin/deploy.sh dev",
+    "prettier": "gulp prettier"
   },
   "author": "jason",
   "license": "ISC",

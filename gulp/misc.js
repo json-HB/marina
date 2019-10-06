@@ -64,7 +64,7 @@ gulp.task("propoMerge", function(cb) {
 });
 
 // replace src
-gulp.task("srcCDN", function(cb) {
+gulp.task("srcCDN", function() {
   return gulp
     .src(`${dist}/*.html`)
     .pipe(
