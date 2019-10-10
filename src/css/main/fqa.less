@@ -143,42 +143,21 @@
         font-size: 18px;
         font-weight: 400;
         color: rgba(102, 102, 102, 1);
-        line-height: 24px;
+        line-height: 35px;
       }
     }
     .h2-s() {
       h2 {
-        font-size: 25px;
+        font-size: 30px;
         font-weight: bold;
         color: rgba(34, 34, 34, 1);
         line-height: 40px;
-        padding-right: 20px;
-        position: relative;
-        margin-bottom: 10px;
-        cursor: pointer;
-        &:before {
-          content: '';
-          display: block;
-          position: absolute;
-          right: 5px;
-          top: 10px;
-          width: 0px;
-          height: 0px;
-          border: 5px solid transparent;
-          border-bottom-color: #181818;
-          transform: rotate(180deg);
-          transition: transform .3s linear 0s;
-          transform-origin: bottom;
-        }
-        &.show:before {
-          transform: rotate(0deg);
-        }
       }
     }
     h1 {
-      padding-top: 60px;
-      padding-bottom: 40px;
-      font-size: 35px;
+      padding-top: 70px;
+      padding-bottom: 50px;
+      font-size: 40px;
       font-weight: bold;
       color: rgba(34, 34, 34, 1);
       line-height: 72px;
@@ -218,20 +197,20 @@
       }
     }
     .p-s();
-    &.mr-b-f {
-      margin-bottom: 300px;
+    .mr-b-70 {
+      margin-bottom: 70px;
     }
-    .generate-mr(10);
-
-    .generate-mr(@n, @i: 1) when (@i =< @n) {
-      @mr: @i * 10;
-      .mr-b-@{mr} {
-        margin-bottom: @i * 10px;
-      }
-      .generate-mr(@n, (@i + 1));
+    .mr-b-50 {
+      margin-bottom: 50px;
+    }
+    .mr-b-5 {
+      margin-top: 5px;
+    }
+    .mr-b-f {
+      margin-bottom: 380px;
     }
     hr {
-      margin-top: 75px;
+      margin-top: 90px;
       height: 1px;
       background: rgba(221, 221, 221, 1);
     }

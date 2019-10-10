@@ -12,15 +12,6 @@ $(function() {
     });
   }
   $(".bouncing-loader").addClass("hidden");
-
-  // init collapse
-  $(".collapse-item").hide();
-  $("h2").on("click", function() {
-    $(this)
-      .next(".collapse-item:not(:animated)")
-      .slideToggle();
-    $(this).toggleClass("show");
-  });
 });
 
 $(document).on("click", function(ev) {
