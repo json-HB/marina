@@ -41,7 +41,7 @@ mv $filenname.tar.gz deploy/
 if [ $? -eq 0 ]
 then
 echo "tar successful"
-if [ $server = 'true' ]
+if [[  -n $server && $server -eq "true" ]]
 then
 testServer
 fi
