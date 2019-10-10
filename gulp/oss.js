@@ -143,26 +143,4 @@ gulp.task("cache", function(cb) {
     CACHE = {};
   }
   cb();
-  // gulp
-  //   .src(["dist/**/*"], { base: "dist" })
-  //   .pipe(
-  //     through.obj(function(file, enc, next) {
-  //       const content = String(file.contents);
-  //       const degest = require("crypto")
-  //         .createHash("md5")
-  //         .update(content)
-  //         .digest("hex")
-  //         .slice(0, 8);
-  //       const pathname = path.relative(file.base, file.path);
-  //       CACHE[pathname] = `${degest}`;
-  //       this.push(file);
-  //       next();
-  //     })
-  //   )
-  //   .pipe(gulp.dest("dist"))
-  //   .on("finish", function() {
-  //     console.log(CACHE);
-  //     fs.writeFileSync(cachePath, JSON.stringify(CACHE, null, 2), "utf-8");
-  //     cb();
-  //   });
 });

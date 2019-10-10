@@ -122,7 +122,8 @@ $(function() {
     if (diff <= 0) {
       setTime(0, 0);
     } else {
-      const diffDay = Math.ceil(diff / 3600 / 1000 / 24).toString();
+      let diffDay = Math.ceil(diff / 3600 / 1000 / 24).toString();
+      diffDay = diffDay < 10 ? diffDay.padStart(2, "0") : diffDay;
       console.log(diffDay);
       setTime(diffDay.split("")[0], diffDay.split("")[1]);
     }
