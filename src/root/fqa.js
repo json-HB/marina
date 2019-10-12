@@ -3,7 +3,7 @@ import "../vendor/dropdown.js";
 import "../vendor/collapse.js";
 import "../vendor/button.js";
 import "../vendor/transition.js";
-import { isMobile } from "util";
+import { isMobile, getUrl } from "util";
 
 $(function() {
   if (isMobile()) {
@@ -12,6 +12,7 @@ $(function() {
     });
   }
   $(".bouncing-loader").addClass("hidden");
+  getUrl();
 });
 
 $(document).on("click", function(ev) {
