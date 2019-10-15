@@ -2,13 +2,17 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
+const marked = require("marked");
+const renderer = new marked.Renderer();
 
 console.log(process.env.dist);
 
 const CONFIG = {
   entry: {
     index: path.join(__dirname, "/src/root/index.js"),
-    fqa: path.join(__dirname, "/src/root/fqa.js")
+    fqa: path.join(__dirname, "/src/root/fqa.js"),
+    "privacy-policy": path.join(__dirname, "/src/root/privacy-policy.js"),
+    team: path.join(__dirname, "/src/root/team.js")
   },
   output: {
     filename: "[name].[hash:5].js",
@@ -31,7 +35,7 @@ const CONFIG = {
           name: "vendors"
         },
         default: {
-          minChunks: 3,
+          minChunks: 10,
           priority: 10,
           name: "default",
           reuseExistingChunk: true
@@ -124,6 +128,21 @@ const CONFIG = {
         options: {
           variable: "data"
         }
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: "html-loader"
+          },
+          {
+            loader: "markdown-loader",
+            options: {
+              pedantic: true,
+              renderer
+            }
+          }
+        ]
       }
     ]
   },
@@ -148,7 +167,9 @@ const makePlugins = configs => {
   const plugins = configs.plugins;
   const chunksArr = {
     fqa: ["fqa"],
-    index: ["index", "vendors", "default"]
+    index: ["index", "vendors", "default"],
+    "privacy-policy": ["privacy-policy"],
+    team: ["team"]
   };
 
   // 根据 entry 自动生成 HtmlWebpackPlugin 配置，配置多页面

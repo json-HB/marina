@@ -13,7 +13,7 @@ $(function() {
   // from fqa about
   function jumpfromfqa() {
     let hash = location.hash;
-    if (hash && /from=fqa/.test(hash)) {
+    if (hash && /from=other/.test(hash)) {
       move();
     }
   }
