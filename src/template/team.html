@@ -15,9 +15,10 @@
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="description" content="KreditOne offers instant cash to all Indians" />
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="i.e. loan, instant cash, easy apply" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="manifest" href="/haibo.webmanifest" />
+    <link rel="canonical" href="http://kreditone.in/" />
     <link
       rel="shortcut icon"
       href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/images/favicon.ico"
@@ -26,7 +27,6 @@
       rel="stylesheet"
       href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/bootstrap.css"
     />
-    <script src="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/jquery.js"></script>
   </head>
   <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
     <script>
@@ -35,7 +35,7 @@
         BUILD_TIME: "{{BUILD_TIME}}"
       };
     </script>
-    <%= require('html-loader!../html/loading/loading.html') %> <%=
+    <%= require('html-loader!../html/loading/app-loading.html') %> <%=
     require('html-loader!../html/include/rem.html') %>
     <div class="container">
     </div>

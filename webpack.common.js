@@ -12,7 +12,8 @@ const CONFIG = {
     index: path.join(__dirname, "/src/root/index.js"),
     fqa: path.join(__dirname, "/src/root/fqa.js"),
     "privacy-policy": path.join(__dirname, "/src/root/privacy-policy.js"),
-    team: path.join(__dirname, "/src/root/team.js")
+    team: path.join(__dirname, "/src/root/team.js"),
+    personLoan: path.join(__dirname, "/src/root/personLoan.js")
   },
   output: {
     filename: "[name].[hash:5].js",
@@ -169,14 +170,15 @@ const makePlugins = configs => {
     fqa: ["fqa"],
     index: ["index", "vendors", "default"],
     "privacy-policy": ["privacy-policy"],
-    team: ["team"]
+    team: ["team"],
+    personLoan: ["personLoan"]
   };
 
   // 根据 entry 自动生成 HtmlWebpackPlugin 配置，配置多页面
   Object.keys(configs.entry).forEach(item => {
     plugins.push(
       new HtmlWebpackPlugin({
-        title: "KreditOne",
+        title: "One kredit for all | Kreditone",
         filename: `${item}.html`,
         template: path.resolve(__dirname, `src/template/${item}.html`),
         minify: {
