@@ -159,7 +159,8 @@ const CONFIG = {
       {
         from: "src/vendor/jquery.js"
       }
-    ])
+    ]),
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 };
 
@@ -188,7 +189,8 @@ const makePlugins = configs => {
           collapseInlineTagWhitespace: true,
           conservativeCollapse: true,
           minifyJS: {
-            compress: true
+            compress: true,
+            warnings: false
           },
           minifyCSS: true
         },
