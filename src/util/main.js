@@ -108,10 +108,7 @@ export const Alert = {
 };
 
 export function getUrl() {
-  $(".downloadApp").attr(
-    "href",
-    "https://kreditone-dev.oss-cn-shenzhen.aliyuncs.com/kreditone.apk"
-  );
+  $(".downloadApp").attr("href", "http://www.kreditone.in/kreditone.apk");
   // $.get(
   //   "http://haibo.online:3007/url",
   //   function(data) {

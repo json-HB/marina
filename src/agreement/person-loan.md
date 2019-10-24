@@ -79,7 +79,7 @@ The Borrower(s) understands that the Lender shall have the absolute right to gra
 
 **b)** Borrower(s) agrees that the Lender may collect, store, use, transfer or disclose any information provided by the Borrower, including sensitive personal data, for purposes, including but not limited to data processing, statistical or risk analysis, conducting credit or anti-money laundering checks, designing financial services or related products, marketing financial services or related products, customer recognition on Lender's website, offering relevant product and service offers to customers, etc. Lender may share your information with all the companies/entities/ subsidiaries/affiliates thereof and/or any other Lender/financial institution/society, etc. as necessary, for the purposes.
 
-**c)** Borrower agrees that all information that Borrower disclosed voluntarily on WWW.KREDITONE.IN (website and Kreditone app), property of Kreditin Private Limited is true to the best of his/her knowledge. Lender has obtained all the relevant information from the same platform basis its arrangement with Kreditin Private Limited.
+**c)** Borrower agrees that all information that Borrower disclosed voluntarily on WWW.KREDITONE.IN (website and KreditOne app), property of Kreditin Private Limited is true to the best of his/her knowledge. Lender has obtained all the relevant information from the same platform basis its arrangement with Kreditin Private Limited.
 
 ## **5) Miscellaneous:**
 

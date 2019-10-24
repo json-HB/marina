@@ -169,7 +169,9 @@ $(function() {
   // home fitst screen
   function homeFullScreen() {
     if (!isMobile()) {
-      const totalHeight = 144;
+      $("#count").hide();
+      const countHeight = 84;
+      const totalHeight = 60;
       const clinetHeight = $(window).height();
       const restHeight = clinetHeight - totalHeight;
       if (restHeight > 638 || restHeight < 900) {

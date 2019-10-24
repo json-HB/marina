@@ -1,8 +1,8 @@
-<h1 style='text-align: center;'>PRIVACY POLICY – October 2019</h1>
+<h1 style='text-align: center;'>PRIVACY POLICY</h1>
 
 By visiting this Kredione mobile and/or web application (“*App*”) (collectively, the “*Platform*”) and availing the services provided by us (“Services”) you agree to be bound by the terms and conditions of this Privacy Policy.
 
-By mere access to the Platform or any part thereof, you expressly consent to [ ] (“we” or “our” or “us” or “*Kreditone*”) use and disclosure of your personal information in accordance with this Privacy Policy. This Privacy Policy is incorporated into and subject to the Terms of Use of the Platform.
+By mere access to the Platform or any part thereof, you expressly consent to [ ] (“we” or “our” or “us” or “*KreditOne*”) use and disclosure of your personal information in accordance with this Privacy Policy. This Privacy Policy is incorporated into and subject to the Terms of Use of the Platform.
 
 For the purpose of this Privacy Policy, the users of the Services may be customer/consumers, or any other persons using Services or accessing our Platform (“user” or “you” or “your”).
 If you do not agree to this Policy or any part thereof, please do not use or access our Platform or any part thereof.
@@ -215,9 +215,9 @@ In accordance with Information Technology Act 2000 and rules made there under, t
 
 *Name*: Rohit Bhardwaj
 <br />
-*Address*: Kreditone, Awfis Space solutions, The Corenthum, 7th Floor, Sector 62, Noida
+*Address*: KreditOne, Awfis Space solutions, The Corenthum, 7th Floor, Sector 62, Noida
 <br />
-*Phone*: 8826120009
+*Phone*: 90896-90897
 <br />
 *Email*: rohit.bhardwaj@kreditone.in
 <br />
