@@ -1320,8 +1320,12 @@
       .row.link {
         margin-top: 44px;
         div[class^="col-"] {
+          &:nth-child(n - 3) {
+            height: 130px;
+          }
           &:nth-child(n + 4) {
             margin-top: 50px;
+            margin-bottom: 20px;
           }
           .item {
             text-align: left;
