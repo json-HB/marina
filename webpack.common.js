@@ -66,7 +66,10 @@ const CONFIG = {
             loader: "style-loader"
           },
           {
-            loader: "css-loader" // translates CSS into CommonJS
+            loader: "css-loader",
+            options: {
+              modules: false
+            } // translates CSS into CommonJS
           },
           {
             loader: "postcss-loader",
