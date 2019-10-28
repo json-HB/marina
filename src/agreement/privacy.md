@@ -26,14 +26,6 @@ In general, you can browse the Website or App without telling us who you are or 
 
 Where possible, we indicate the mandatory and the optional fields. You always have the option to not provide your personal information by choosing not to use a particular service or feature on the Platform. We also collect other identifiable information (your payment card details and transaction histories on the Platform) from you when you set up a free account with us as further detailed below. While you can browse some sections of our Platform without being a registered member as mentioned above, certain activities (such as availing of loans from the third party lenders on the Platform) requires registration and for you to provide the above details. The Platform shall clearly display the personal information it is collecting from you, and you have the option to not provide such personal information. However, this will limit the services provided to you on the Platform.
 
-## **COLLECTION OF FINANCIAL SMS INFORMATION**
-
-We don’t collect or store your personal SMS from your inbox.
-
-We only collect financial SMS sent by 6-digit alphanumeric senders from your inbox which helps us in identifying the various accounts that you are holding and the cash flow patterns that you have as a user to help us perform a credit risk assessment which enables us to determine your risk profile and to provide you with the appropriate credit analysis to enable you to take financial facilities from the regulated financial entities and other service providers available on the platform.
-
-While using the app, it periodically sends the financial SMS information to our affiliate server and to us.
-
 ## **COLLECTION OF MOBILE NUMBER AND EMAIL ADDRESS**
 
 When you sign up with us, we collect your mobile number and email address to uniquely identify you. This helps us ensure that no unauthorised device or person is acting on your behalf.
@@ -173,12 +165,6 @@ The Website/App intends to protect your personal information and to maintain its
 Our Platform has stringent security measures in place to protect the loss, misuse and alteration of information under control. We endeavour to safeguard and ensure the security of the information provided by you. We use Secure Sockets Layers (SSL) based encryption, for the transmission of the information, which is currently the required level of encryption in India as per the law.
 
 We blend security at multiple steps within our products with the state of the art technology to ensure our systems maintain strong security measures and the overall data and privacy security design allow us to defend our systems ranging from low hanging issue up to sophisticated attacks.
-
-In addition, the Website and App have been certified for the following security certifications:
-  <div class='indent-content'>
-    <span class='indent'> **a)** *ISO 9001:* being the international standard that details requirements for a quality management system (QMS). Organizations use the standard to demonstrate the ability to consistently provide products and services that meet customer and regulatory requirements with the requisite security protections;</span>
-    <span class='indent'> **b)** *ISO 27001 (formally known as ISO/IEC 27001:2005):* is a specification for an information security management system (ISMS) and is the suggested level of certification required under the Information Technology Act, 2000. An ISMS is a framework of policies and procedures that includes all legal, physical and technical controls involved in an organization’s information risk management processes;</span>
-  </div>
 
 We work hard to protect from unauthorized access, alteration, disclosure or destruction of information we hold, including:
   <div class='indent-content'>
