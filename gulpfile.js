@@ -10,6 +10,7 @@ const bs = require("browser-sync").create();
 const runSequence = require("run-sequence");
 const requireAll = require("require-all");
 const { CONFIG } = require("./gulp/config.js");
+const del = require("del");
 
 requireAll({
   dirname: __dirname + "/gulp",
@@ -34,7 +35,7 @@ function outputLog(target) {
 }
 
 // start project
-gulp.task("build", ["g:webpack:build"], function(cb) {
+gulp.task("build", ["del", "g:webpack:build"], function(cb) {
   runSequence("srcCDN", "propoMerge", "sw", "pwa", cb);
 });
 
@@ -79,4 +80,10 @@ gulp.task("server", function(cb) {
       cb();
     }
   );
+});
+
+// clean dist
+gulp.task("del", function(done) {
+  del.sync(CONFIG.dist);
+  done();
 });

@@ -161,6 +161,11 @@ const CONFIG = {
       },
       {
         from: "src/vendor/jquery.js"
+      },
+      {
+        from: "src/static/*.mp4",
+        to: "video",
+        flatten: true
       }
     ]),
     new webpack.NoEmitOnErrorsPlugin()
