@@ -66,7 +66,8 @@
     "gzip:pro": "./bin/deploy.sh",
     "gzip:local": "./bin/deploy.sh dev",
     "gzip:local:server": "server=true ./bin/deploy.sh dev",
-    "prettier": "gulp prettier"
+    "prettier": "gulp prettier",
+    "server": "http-server dev -p 3008 -o"
   },
   "author": "jason",
   "license": "ISC",

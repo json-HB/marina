@@ -22,7 +22,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="manifest" href="/haibo.webmanifest" />
     <link rel="canonical" href="http://kreditone.in/" />
-    <link rel="preload" href="/video/kreditone.mp4" as="media">
+    <link rel="prefetch" href="/video/kreditone.mp4">
     <link
       rel="shortcut icon"
       href="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/images/favicon.ico"
