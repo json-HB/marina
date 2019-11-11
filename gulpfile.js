@@ -34,9 +34,9 @@ function outputLog(target) {
   });
 }
 
-// start project
+// build project
 gulp.task("build", ["del", "g:webpack:build"], function(cb) {
-  runSequence("srcCDN", "propoMerge", "sw", "pwa", cb);
+  runSequence("srcCDN", "propoMerge", "sw", "pwa", "ga", cb);
 });
 
 // start project
@@ -46,7 +46,7 @@ gulp.task("dev", function() {
 
 // webpack build
 gulp.task("g:webpack:build", function(cb) {
-  const webpack = require("child_process").execSync("npm run  webpack:build", {
+  const webpack = require("child_process").execSync("npm run webpack:build", {
     encoding: "utf8",
     cwd: process.cwd(),
     env: Object.assign(process.env, { ...CONFIG })

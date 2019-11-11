@@ -43,5 +43,6 @@
     <script src="<%= webpackConfig.mode == 'production' ? webpackConfig.output.publicPath : '' %>/jquery.js"></script>
     <%= require('html-loader!../html/include/rem.html') %> <%=
     require('html-loader!../html/section/index.html') %>
+    @@ga@@
   </body>
 </html>

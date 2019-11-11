@@ -102,3 +102,26 @@ gulp.task("pwa", function(cb) {
     .pipe(gulp.dest(dist))
     .on("finish", cb);
 });
+
+// GA task
+gulp.task("ga", function(cb) {
+  const GA = [
+    '<script async src="https://www.googletagmanager.com/gtag/js?id=G-C46SSKNH53"></script>',
+    `<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'G-C46SSKNH53');</script>`
+  ];
+  gulp
+    .src(`${dist}/index.html`)
+    .pipe(
+      through.obj(function(file, enc, next) {
+        let content = file.contents.toString();
+        content = content.replace(/@@([^@]*)@@/g, function(full) {
+          return GA.join("");
+        });
+        file.contents = Buffer.from(content);
+        this.push(file);
+        next();
+      })
+    )
+    .pipe(gulp.dest(dist))
+    .on("finish", cb);
+});
