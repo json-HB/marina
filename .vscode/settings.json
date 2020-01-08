@@ -1,5 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "prettier.eslintIntegration": true,
-  "javascript.validate.enable": false
+  "javascript.validate.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true
+  },
+  "stylelint.autoFixOnSave": true,
 }

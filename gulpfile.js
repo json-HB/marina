@@ -20,7 +20,7 @@ requireAll({
 
 console.log(CONFIG);
 
-function outputLog(target) {
+function outputLog(target, cb) {
   target.stdout.on("data", d => {
     util.log(util.colors.green(String(d)));
   });
@@ -30,6 +30,11 @@ function outputLog(target) {
   target.on("close", code => {
     if (code != 0) {
       util.log(util.colors.red(`webpack process exit, code is ${code}`));
+    }
+  });
+  target.on("exit", code => {
+    if (code == 0) {
+      cb();
     }
   });
 }
@@ -56,12 +61,12 @@ gulp.task("g:webpack:build", function(cb) {
 });
 
 // webpack dev server
-gulp.task("g:webpack:dev", function() {
+gulp.task("g:webpack:dev", function(cb) {
   const webpack = require("child_process").exec("npm run webpack:dev", {
     encoding: "utf8",
     cwd: process.cwd()
   });
-  outputLog(webpack);
+  outputLog(webpack, cb);
 });
 
 // start local server

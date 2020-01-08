@@ -4,17 +4,28 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 const marked = require("marked");
 const renderer = new marked.Renderer();
+const fs = require("fs");
+const ora = require("ora");
 
-console.log(process.env.dist);
+const taskConfig = ora("config init...");
+taskConfig.start();
 
+function aliasResove(dir) {
+  return path.resolve(__dirname, dir);
+}
+
+function getEntries() {
+  const files = fs.readdirSync(path.resolve("src/root"), "utf-8");
+  const entries = {};
+  files.forEach((file, i) => {
+    const name = file.replace(/\.js/, "");
+    entries[name] = `./src/root/${file}`;
+  });
+  return entries;
+}
+console.log(getEntries());
 const CONFIG = {
-  entry: {
-    index: path.join(__dirname, "/src/root/index.js"),
-    fqa: path.join(__dirname, "/src/root/fqa.js"),
-    "privacy-policy": path.join(__dirname, "/src/root/privacy-policy.js"),
-    team: path.join(__dirname, "/src/root/team.js"),
-    personLoan: path.join(__dirname, "/src/root/personLoan.js")
-  },
+  entry: getEntries(),
   output: {
     filename: "[name].[hash:5].js",
     path: path.resolve(__dirname, process.env.dist || "dist")
@@ -48,10 +59,10 @@ const CONFIG = {
   resolve: {
     extensions: [".js", ".json", ".jsx", ".css"],
     alias: {
-      util: path.resolve(__dirname, "./src/util/main.js"),
-      ejs: path.resolve(__dirname, "./src/html/ejs"),
-      static: path.resolve(__dirname, "./src/static"),
-      css: path.resolve(__dirname, "./src/css/main")
+      util: aliasResove("./src/util/main.js"),
+      ejs: aliasResove("./src/html/ejs"),
+      static: aliasResove("./src/static"),
+      css: aliasResove("./src/css/main")
     }
   },
   externals: {
@@ -210,5 +221,7 @@ const makePlugins = configs => {
 };
 
 CONFIG.plugins.concat(makePlugins(CONFIG));
+
+taskConfig.succeed("config init successful!");
 
 module.exports = CONFIG;
