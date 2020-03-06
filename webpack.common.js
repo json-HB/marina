@@ -213,7 +213,7 @@ const makePlugins = configs => {
           },
           minifyCSS: true
         },
-        chunks: chunksArr[item]
+        chunks: chunksArr[item].concat("manifest")
       })
     );
   });

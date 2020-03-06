@@ -14,8 +14,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="description" content="KreditOne offers instant cash to all Indians" />
-    <meta name="keywords" content="cash loans, cash loan in 1 hour, instant cash loans, quick cash loans, fast cash loans, cash loans online, easy cash loans, easy loans, personal cash loans, personal loan, quick loans, personal loans online, low interest personal loans, quick personal loans, personal loan calculator, loan calculator, fast loans, quick cash, fast loans online, payday loans, payday loans online, quicken loans, online loan, online loans, online loan application, online lending, online pay day, emergency loans, emergency cash loans, cash advance, instant loan online, instant loans, small cash loans, loans for unemployed, cash lending, salary loan, credit online, business loan, rupee, Kredit one, Kreditone, Kredite, Kredit online, Kreditbee, Cashmama, Cashbean Cashmax, Rupeebus, Early salary, Rupee" />
+    <meta
+      name="description"
+      content="KreditOne offers instant cash to all Indians"
+    />
+    <meta
+      name="keywords"
+      content="cash loans, cash loan in 1 hour, instant cash loans, quick cash loans, fast cash loans, cash loans online, easy cash loans, easy loans, personal cash loans, personal loan, quick loans, personal loans online, low interest personal loans, quick personal loans, personal loan calculator, loan calculator, fast loans, quick cash, fast loans online, payday loans, payday loans online, quicken loans, online loan, online loans, online loan application, online lending, online pay day, emergency loans, emergency cash loans, cash advance, instant loan online, instant loans, small cash loans, loans for unemployed, cash lending, salary loan, credit online, business loan, rupee, Kredit one, Kreditone, Kredite, Kredit online, Kreditbee, Cashmama, Cashbean Cashmax, Rupeebus, Early salary, Rupee"
+    />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="manifest" href="/haibo.webmanifest" />
     <link rel="canonical" href="http://kreditone.in/" />
@@ -37,7 +43,48 @@
     </script>
     <%= require('html-loader!../html/loading/app-loading.html') %> <%=
     require('html-loader!../html/include/rem.html') %>
-    <div class="container">
-    </div>
+    <script>
+      function fillAgreement(loanInfo) {
+        console.log(JSON.stringify(loanInfo || "{}"));
+        document.getElementById("acceptanceDay").innerHTML =
+          loanInfo.acceptanceDay;
+        document.getElementById("acceptanceDay1").innerHTML =
+          loanInfo.acceptanceDay;
+        document.getElementById("acceptedTime").innerHTML =
+          loanInfo.acceptedTime;
+        document.getElementById("accountHoldeName").innerHTML =
+          loanInfo.accountHoldeName;
+        document.getElementById("accountNumber").innerHTML =
+          loanInfo.accountNumber;
+        document.getElementById("bankName").innerHTML = loanInfo.bankName;
+        document.getElementById("borrowerName").innerHTML =
+          loanInfo.borrowerName;
+        document.getElementById("channelName").innerHTML = loanInfo.channelName;
+        document.getElementById("custType").innerHTML = loanInfo.custType;
+        document.getElementById("disbursalAmount").innerHTML =
+          loanInfo.disbursalAmount;
+        document.getElementById("disbursalDay").innerHTML =
+          loanInfo.disbursalDay;
+        document.getElementById("disbursalDay1").innerHTML =
+          loanInfo.disbursalDay;
+        document.getElementById("dueDay").innerHTML = loanInfo.dueDay;
+        document.getElementById("email").innerHTML = loanInfo.email;
+        document.getElementById("ifscCode").innerHTML = loanInfo.ifscCode;
+        document.getElementById("ipAddress").innerHTML = loanInfo.ipAddress;
+        document.getElementById("loanTerm").innerHTML = loanInfo.loanTerm;
+        document.getElementById("panNumber").innerHTML = loanInfo.panNumber;
+        document.getElementById("perMonth").innerHTML = loanInfo.perMonth;
+        document.getElementById("phoneNum").innerHTML = loanInfo.phoneNum;
+        document.getElementById("processingFee").innerHTML =
+          loanInfo.processingFee;
+        document.getElementById("repaymentAmount").innerHTML =
+          loanInfo.repaymentAmount;
+        document.getElementById("loanAmount").innerHTML = loanInfo.loanAmount;
+        document.getElementById("channelAddress").innerHTML =
+          loanInfo.channelAddress;
+        document.getElementById("loanOrderId").innerHTML = loanInfo.loanOrderId;
+      }
+    </script>
+    <div class="container"></div>
   </body>
 </html>
