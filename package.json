@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "fastclick": "^1.0.6",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
