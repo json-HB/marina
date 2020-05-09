@@ -32,7 +32,6 @@ const CONFIG = {
   },
   optimization: {
     splitChunks: {
-      chunks: "all",
       minSize: 10000,
       minChunks: 1,
       maxAsyncRequests: 5,
@@ -43,8 +42,7 @@ const CONFIG = {
         vendors: {
           chunks: "async",
           test: /[\\/]node_modules[\\/]/,
-          priority: 20,
-          name: "vendors"
+          priority: 20
         },
         default: {
           minChunks: 10,

@@ -8,7 +8,7 @@ import { isMobile } from "util";
 
 $(function() {
   if (isMobile()) {
-    import("fastclick").then(({ default: FastClick }) => {
+    import(/* webpackChunkName: "faskclick" */"fastclick").then(({ default: FastClick }) => {
       FastClick.attach(document.body);
     });
   }

@@ -5,7 +5,8 @@
     "bucket": "marina-2019",
     "endpoint": "oss-ap-southeast-5.aliyuncs.com",
     "publicPath": "//marina-2019.oss-ap-southeast-5.aliyuncs.com",
-    "dist": "dist"
+    "dist": "dist",
+    "analyzer": true
   },
   "develop": {
     "accessKeyId": "LTAIUBLgD1OC7IBa",
@@ -13,6 +14,7 @@
     "bucket": "marina-2019",
     "endpoint": "oss-ap-southeast-5.aliyuncs.com",
     "publicPath": "",
-    "dist": "dev"
+    "dist": "dev",
+    "analyzer": false
   }
 }

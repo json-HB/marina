@@ -64,7 +64,8 @@ gulp.task("g:webpack:build", function(cb) {
 gulp.task("g:webpack:dev", function(cb) {
   const webpack = require("child_process").exec("npm run webpack:dev", {
     encoding: "utf8",
-    cwd: process.cwd()
+    cwd: process.cwd(),
+    env: Object.assign(process.env, { ...CONFIG })
   });
   outputLog(webpack, cb);
 });
