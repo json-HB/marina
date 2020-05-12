@@ -22,7 +22,7 @@ gulp.task("imagemin", function(done) {
   gulp
     .src("src/image/*.png")
 
-    .pipe(imagemin([PNG]))
+    .pipe(imagemin([PNG, JPEG]))
     .pipe(gulp.dest("src/image"))
     .on("finish", function() {
       done();

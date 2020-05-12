@@ -4,13 +4,13 @@ This AGREEMENT for Personal Loan is made on the date and at the place as stated 
 
 <h2 style='text-align: center;'>AND</h2>
 
-**Rhino Finance Private Limited,** having its registered office at Office Ground Floor, H-55, Sector 63 Noida (hereinafter referred to as ‘the Lender’, which expression shall unless repugnant to the context or meaning thereof be deemed to include a reference to its successors and assigns).
+**<span id="channelName"></span>,** <span id="channelAddress"></span>(hereinafter referred to as ‘the Lender’, which expression shall unless repugnant to the context or meaning thereof be deemed to include a reference to its successors and assigns).
 
 The Borrower(s)/Borrower and the Lender are hereinafter collectively referred to as ‘Parties’ and individually as the ‘Party’.
 
 <h2 style='text-align: center;'>WHEREAS</h2>
 
-The undersigned Borrower(s) has/have requested for a Personal Loan of an amount not exceeding (Rupees ……………….only) and the Lender has agreed to accede to the said request, subject to the Borrower(s) tendering requisite documents, digital consents, executing present agreement and such documents as may be required by the Lender from time to time.
+The undersigned Borrower(s) has/have requested for a Personal Loan of an amount not exceeding (<span id="loanAmount"></span>) and the Lender has agreed to accede to the said request, subject to the Borrower(s) tendering requisite documents, digital consents, executing present agreement and such documents as may be required by the Lender from time to time.
 
 The Borrower(s) understands that the Lender shall have the absolute right to grant/reject/reduce the loan amount as per its internal credit policy and the Lender’s decision in this regard shall be deemed as final and binding and the Borrower(s) agrees to waive of any right to raise a dispute/claim against the Lender for an action of having granted/reduced/rejected the loan amount pursuant to the loan application.
 
@@ -115,27 +115,23 @@ The Borrower(s) understands that the Lender shall have the absolute right to gra
   </tr>
   <tr>
     <td>Name of borrower</td>
-    <td>First Name   Middle Name Last Name</td>
-  </tr>
-  <tr>
-    <td>Address of Borrower</td>
-    <td>Residential address</td>
+    <td id="borrowerName">First Name   Middle Name Last Name</td>
   </tr>
   <tr>
     <td>PAN</td>
-    <td>PAN Number</td>
+    <td id="panNumber">PAN Number</td>
   </tr>
   <tr>
     <td>Email ID</td>
-    <td>Email</td>
+    <td id="email">Email</td>
   </tr>
   <tr>
     <td>Phone number</td>
-    <td>Mobile Phone (OTP verified)</td>
+    <td id="phoneNum">Mobile Phone (OTP verified)</td>
   </tr>
    <tr>
     <td>Type of customer</td>
-    <td>New/ Repeat</td>
+    <td id="custType">New/ Repeat</td>
   </tr>
 
   <tr>
@@ -145,35 +141,35 @@ The Borrower(s) understands that the Lender shall have the absolute right to gra
   </tr>
   <tr>
     <td>Loan Account ID</td>
-    <td>Loan ID</td>
+    <td id="loanOrderId">Loan ID</td>
   </tr>
   <tr>
     <td>Amount of Loan disbursed (Principal)</td>
-    <td>Amount (rounded up)</td>
+    <td id="disbursalAmount">Amount (rounded up)</td>
   </tr>
   <tr>
-    <td>Interest rate</td>
-    <td>% per day</td>
+    <td>Interest rate per month</td>
+    <td id="perMonth">%</td>
   </tr>
   <tr>
-    <td>Processing Fee</td>
-    <td>Processing Fee</td>
+    <td>Platform Fee</td>
+    <td id="processingFee">Processing Fee</td>
   </tr>
   <tr>
     <td>Date of disbursal</td>
-    <td>DD/MM/YYYY</td>
+    <td id="disbursalDay">DD/MM/YYYY</td>
   </tr>
   <tr>
     <td>Due date for scheduled repayment</td>
-    <td>DD/MM/YYYY</td>
+    <td id="dueDay">DD/MM/YYYY</td>
   </tr>
   <tr>
-      <td>Term of the loan</td>
-      <td>Xxx days</td>
+      <td>Term of the loan(days)</td>
+      <td id="loanTerm">Xxx days</td>
     </tr>
   <tr>
       <td>Total repayment due (Principal + Interest + Fee+ charges if any)</td>
-      <td>Total amount (rounded up)</td>
+      <td id="repaymentAmount">Total amount (rounded up)</td>
     </tr>
 
   <tr>
@@ -183,61 +179,53 @@ The Borrower(s) understands that the Lender shall have the absolute right to gra
   </tr>
   <tr>
     <td>Account Holder Name (same as borrower)</td>
-    <td>First Name   Middle Name    Last Name</td>
+    <td id="accountHoldeName">First Name   Middle Name    Last Name</td>
   </tr>
   <tr>
     <td>Bank Name </td>
-    <td>Bank Name</td>
+    <td id="bankName">Bank Name</td>
   </tr>
   <tr>
     <td>IFSC Code</td>
-    <td>IFSC Code</td>
+    <td id="ifscCode">IFSC Code</td>
   </tr>
   <tr>
-    <td>Address of the bank branch</td>
-    <td>Address</td>
-  </tr>
-  <tr>
-    <td>State</td>
-    <td>State</td>
-  </tr>
-  <tr>
-    <td>City</td>
-    <td>City</td>
+    <td>Account number</td>
+    <td id="accountNumber"></td>
   </tr>
   <tr>
     <td>Date of loan contract Execution</td>
-    <td>Same as date of disbursal (DD/MM/YYYY)</td>
+    <td id="disbursalDay1">Same as date of disbursal (DD/MM/YYYY)</td>
   </tr>
 </table>
 
 ## **Terms and conditions**
 
 - Borrower is responsible for providing correct details of bank account and any error will be the sole responsibility of the borrower and he/she will need to honor the loan agreement and repay as per schedule 1
-- In the event of prepayment, appropriate waiver will be made on pro rate basis across principal, interest, fee etc. as per Borrower’s accounting principles and the same will be reflected in the personal account of the Borrower.
+- Borrower can make full repayment any time after loan is disbursed without any pre- closure charges.
 
 **IN WITNESS WHEREOF, THE PARTIES HERETO HAVE ACCEPTED THIS AGREEMENT INCLUDING TERMS AND**
 **CONDITIONS STATED ABOVE ON THE DAY, MONTH AND YEAR MENTIONED BELOW**
 
 **Borrower**
 <br />
-DD.MM.YYYY
+<span id="acceptanceDay"></span>
 <br />
 (Date of Acceptance)
 
 
 **Lender**
 <br />
-DD.MM.YYYY
+<span id="acceptanceDay1"></span>
 <br />
 (Date of Acceptance)
 
 
 **Digitally Accepted Document**
 <br />
-Borrower IP Address: (Enter IP address of borrower)
+Borrower IP Address: <span id="ipAddress"></span>
 <br />
-Date: DD.MM.YYYY at HH:MM:SS IST
+Date: <span id="acceptedTime"></span>
 
 <br />
 <br />

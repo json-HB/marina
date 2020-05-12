@@ -30,6 +30,10 @@ Where possible, we indicate the mandatory and the optional fields. You always ha
 
 When you sign up with us, we collect your mobile number and email address to uniquely identify you. This helps us ensure that no unauthorised device or person is acting on your behalf.
 
+## **SMS**
+
+Required to read your financial SMS sent by banks and billers. Your financial transactions are used to create your financial and risk profile, to provide the best loan offer based on the financial SMS’s.
+
 ## **COLLECTION OF LOCATION**
 
 We collect location information from your device to reduce the risk associated with your account.
