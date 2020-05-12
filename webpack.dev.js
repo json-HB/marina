@@ -33,14 +33,15 @@ module.exports = new Promise(function(resolve) {
       new webpack.HotModuleReplacementPlugin()
     ]
   });
+  console.log(process.env.analyzer, "analyzer");
   if (process.env.analyzer) {
-    devConfig.plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerMode: "server",
-        openAnalyzer: true,
-        analyzerPort: 3100
-      })
-    );
+    // devConfig.plugins.push(
+    //   new BundleAnalyzerPlugin({
+    //     analyzerMode: "server",
+    //     openAnalyzer: true,
+    //     analyzerPort: 3100
+    //   })
+    // );
   }
   resolve(devConfig);
 });

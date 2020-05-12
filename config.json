@@ -6,7 +6,7 @@
     "endpoint": "oss-ap-southeast-5.aliyuncs.com",
     "publicPath": "//marina-2019.oss-ap-southeast-5.aliyuncs.com",
     "dist": "dist",
-    "analyzer": true
+    "analyzer": false
   },
   "develop": {
     "accessKeyId": "LTAIUBLgD1OC7IBa",
