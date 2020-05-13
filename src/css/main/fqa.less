@@ -138,6 +138,7 @@
 
 #fqa-content {
   .container {
+    margin-bottom: 150px;
     .p-s() {
       p {
         font-size: 18px;
@@ -152,6 +153,25 @@
         font-weight: bold;
         color: rgba(34, 34, 34, 1);
         line-height: 40px;
+        position: relative;
+        padding-left: 30px;
+        transition:  color .3s linear 0s;
+        margin-bottom: 20px;
+        &:hover {
+          color: #ff8d31;
+          cursor: pointer;
+        }
+        &.active:before {
+          transform: rotate(90deg);
+        }
+        &:before {
+          content: '>';
+          font-size: 0.3rem;
+          left: 0rem;
+          position: absolute;
+          display: inline-block;
+          transition: transform .3s linear 0s;
+        }
       }
     }
     h1 {
@@ -232,6 +252,9 @@
         font-weight: bold;
         color: rgba(34, 34, 34, 1);
         line-height: 72px;
+      }
+      h2 {
+        margin-bottom: 30px;
       }
       ul {
         margin-left: -55px;

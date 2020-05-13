@@ -13,7 +13,26 @@ $(function() {
   }
   $(".bouncing-loader").addClass("hidden");
   getUrl();
+  bindH2Event();
 });
+
+function bindH2Event() {
+  $("h2").each(function() {
+    $(this)
+      .next()
+      .hide();
+  });
+  $("h2").on("click", function() {
+    $(this).hasClass("active")
+      ? $(this)
+          .next()
+          .slideUp()
+      : $(this)
+          .next()
+          .slideDown();
+    $(this).toggleClass("active");
+  });
+}
 
 $(document).on("click", function(ev) {
   if (isMobile()) {
