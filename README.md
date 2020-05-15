@@ -1,5 +1,7 @@
 # webui-jason
 
+![Node.js CI](https://github.com/json-HB/marina/workflows/Node.js%20CI/badge.svg?branch=Lanka)
+
 ## 文件命名规范
 
 一律使用小写字母，单词间用`-`连接，名词一律使用单数形式。

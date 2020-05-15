@@ -27,9 +27,8 @@ jobs:
           npm run build:local
       - name: Deploy
         if: success()
-        uses: crazy-max/ghaction-github-pages@v1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target_branch: gh-pages
-          build_dir: dev
-        env:
-          GITHUB_TOKEN: ${{ secrets.gt }}
+          github_token: ${{ secrets.gt }}
+          publish_dir: ./dev
+          # publish_branch: master  # deploying branch
