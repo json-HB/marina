@@ -32,7 +32,7 @@ self.__precacheManifest = [
   },
   {
     "url": "fqa.html",
-    "revision": "ae3c5577f3c1c23aa1d1e74d72b89b3c"
+    "revision": "c0cac6b67a7ca99f69747c4be13b95b2"
   },
   {
     "url": "images/bank1.png",
@@ -140,43 +140,43 @@ self.__precacheManifest = [
   },
   {
     "url": "js/fqa.js",
-    "revision": "efadd85f5086e43bb2326ba4add30b88"
+    "revision": "a7903e529084b3eef3b48918c6fec04e"
   },
   {
     "url": "js/index.js",
-    "revision": "10443d747bbb944654ff6f6180845c17"
+    "revision": "4dee2a4fa44157b0f90027ce1d8be432"
   },
   {
     "url": "js/manifest.js",
-    "revision": "430ece2616b629a9d725b6b331146b41"
+    "revision": "2e3ef6e0567f26df50e5e716cb2c572b"
   },
   {
     "url": "js/personLoan.js",
-    "revision": "7634216ad1110e89e8c3970a7e00dde9"
+    "revision": "13ccba736f7d11c1184b55d1b69c4b22"
   },
   {
     "url": "js/privacy-policy.js",
-    "revision": "a44ec60b3a6fc30df9a1db4a3c3a8370"
+    "revision": "52b387b0dff8f4e760c6bb10f0988198"
   },
   {
     "url": "js/team.js",
-    "revision": "48389496fea1eb065fd3704411e29a43"
+    "revision": "2e5bf953378d4ca95f5ecce4c0ec7050"
   },
   {
     "url": "js/vendors-faskclick.js",
-    "revision": "235e14af26cb1bbb2e4e363d812a5f77"
+    "revision": "4c204453450005b113f9480d6f6056ac"
   },
   {
     "url": "personLoan.html",
-    "revision": "c904028ad2653dc50fed2ac650b5f23b"
+    "revision": "8b8063afad4f57d76e5c952e10f99a24"
   },
   {
     "url": "privacy-policy.html",
-    "revision": "18c90c8ea4f4a469a4aa4332ebd4e44e"
+    "revision": "964f94de58c09fde2617d300ede1ca5c"
   },
   {
     "url": "team.html",
-    "revision": "099ccb27cad6c4ef471b28de6990402b"
+    "revision": "d1e945cf2971789bcd4cc9dddb42781c"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
