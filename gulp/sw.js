@@ -82,11 +82,6 @@ gulp.task("delworkboxRest", function(cb) {
     "workbox-build"
   ].replace(/\^?/, "");
   const dir = `workbox-v${version}`;
-  const rest = `${dir}/workbox-sw.js`;
-  del.sync([
-    `dist/${dir}/*.*`,
-    `!dist/${rest}`,
-    `!dist/${dir}/workbox-core.dev.js`
-  ]);
+  del.sync([`${dist}/${dir}/*.map`, `${dist}/${dir}/*.dev.js`]);
   cb();
 });

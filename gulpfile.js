@@ -41,7 +41,7 @@ function outputLog(target, cb) {
 
 // build project
 gulp.task("build", ["del", "g:webpack:build"], function(cb) {
-  runSequence("srcCDN", "propoMerge", "sw", "pwa", "ga", cb);
+  runSequence("srcCDN", "propoMerge", "sw", "pwa", "delworkboxRest", "ga", cb);
 });
 
 // start project

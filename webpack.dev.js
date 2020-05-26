@@ -15,7 +15,7 @@ module.exports = new Promise(function(resolve) {
       open: true,
       port: process.env.port || 3008,
       clientLogLevel: "info", //none | error | warning | info
-      host: "0.0.0.0",
+      useLocalIp: true,
       headers: {
         "x-custom-name": "json"
       },
