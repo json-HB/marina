@@ -3,7 +3,7 @@
 #custom
 deploy
 # favicon.ico
-# config.json
+config.json
 dev
 
 *~
